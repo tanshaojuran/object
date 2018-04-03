@@ -9,7 +9,7 @@ module.exports={
             user:'root',
             password:'root',
             port:'3306',
-            database:''
+            database:'twilight'
         });
         //打开连接
         myconnect.connect();

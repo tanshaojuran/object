@@ -8,7 +8,7 @@ module.exports.sqlpool=function(){
             user:'root',
             password:'root',
             port:'3306',
-            database:''
+            database:'twilight'
         },
         connect:function(sql,arr,fn){
             const pool=mysql.createPool(this.config);
