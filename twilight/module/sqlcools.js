@@ -7,7 +7,7 @@ module.exports.sqlpool=function(){
             host:'localhost',
             user:'root',
             password:'root',
-            port:'3308',
+            port:'3306',
             database:''
         },
         connect:function(sql,arr,fn){
