@@ -5,30 +5,30 @@ $(function(){
     //轮播小图片的点击事件
     var ProListdiv=$("#ProListS1Left>div>div");
     $(ProListdiv[0]).css({"box-shadow":"0px 0px 4px #888"});
-    $(ProListdiv[0]).on("click",function(){
+    $(ProListdiv).on("click",function(){
         ProListdiv.css({"border":"4px solid #f8f8f8","box-shadow":"0px 0px 0px #888"});
-        $(ProListdiv[0]).css({"border":"4px solid #ffffff","box-shadow":"0px 0px 4px #888"});
-        $("#ProListS1Center img").attr({ src: "../images/ycxl_dt_01.jpg", alt: "大图1" });
-        $("#prolistS1Right div div img").attr({ src: "../images/ycxl_zst_01.jpg", alt: "大图1" });
-        $("#prolistS1Right div h2").text("北欧餐厅长形吊灯");
-        $("#prolistS1Right div h3").text("A Nordic restaurant");
+        $(this).css({"border":"4px solid #ffffff","box-shadow":"0px 0px 4px #888"});
+        if($(this).index()==0){
+            $("#ProListS1Center img").attr({ src: "../images/ycxl_dt_01.jpg", alt: "大图1" });
+            $("#prolistS1Right div div img").attr({ src: "../images/ycxl_zst_01.jpg", alt: "展示图1" });
+            $("#prolistS1Right div h2").text("北欧餐厅长形吊灯");
+            $("#prolistS1Right div h3").text("A Nordic restaurant");
+            $("#prolistS1Right div p span").text("475.00");
+        }else if($(this).index()==1){
+            $("#ProListS1Center img").attr({ src: "../images/ycxl_dt_02.jpg", alt: "大图2" });
+            $("#prolistS1Right div div img").attr({ src: "../images/ycxl_zst_02.jpg", alt: "展示图2" });
+            $("#prolistS1Right div h2").text("北欧餐厅圆形吊灯");
+            $("#prolistS1Right div h3").text("A Nordic restaurant");
+            $("#prolistS1Right div p span").text("550.00");
+        }else if($(this).index()==2){
+            $("#ProListS1Center img").attr({ src: "../images/ycxl_dt_03.jpg", alt: "大图3" });
+            $("#prolistS1Right div div img").attr({ src: "../images/ycxl_zst_03.jpg", alt: "展示图3" });
+            $("#prolistS1Right div h2").text("北欧客厅长形吊灯");
+            $("#prolistS1Right div h3").text("A Nordic living room");
+            $("#prolistS1Right div p span").text("355.00");
+        }
     });
-    $(ProListdiv[1]).on("click",function(){
-        ProListdiv.css({"border":"4px solid #f8f8f8","box-shadow":"0px 0px 0px #888"});
-        $(ProListdiv[1]).css({"border":"4px solid #ffffff","box-shadow":"0px 0px 4px #888"});
-        $("#ProListS1Center img").attr({ src: "../images/ycxl_dt_02.jpg", alt: "大图2" });
-        $("#prolistS1Right div div img").attr({ src: "../images/ycxl_zst_02.jpg", alt: "大图1" });
-        $("#prolistS1Right div h2").text("北欧餐厅圆形吊灯");
-        $("#prolistS1Right div h3").text("A Nordic restaurant");
-    });
-    $(ProListdiv[2]).on("click",function(){
-        ProListdiv.css({"border":"4px solid #f8f8f8","box-shadow":"0px 0px 0px #888"});
-        $(ProListdiv[2]).css({"border":"4px solid #ffffff","box-shadow":"0px 0px 4px #888"});
-        $("#ProListS1Center img").attr({ src: "../images/ycxl_dt_03.jpg", alt: "大图3" });
-        $("#prolistS1Right div div img").attr({ src: "../images/ycxl_zst_03.jpg", alt: "大图1" });
-        $("#prolistS1Right div h2").text("北欧客厅长形吊灯");
-        $("#prolistS1Right div h3").text("A Nordic living room");
-    });
+
 
     //产品菜单相关事件
     //鼠标移入事件
