@@ -200,7 +200,7 @@ $(function(){
     });
     $(".ProListS3Queren").on("click",function(){
         console.log($(".slider-input").val())
-    })
+    });
 
     //收藏
     $(".ProListXin").on("click",function(){
@@ -213,6 +213,19 @@ $(function(){
         }
 
     });
+
+    //列表请求数据
+    var ProListAjax= function (){
+        $.ajax({
+            type: "post",
+            url: "ProListShangPin.js",
+            data:"",
+            success: function(html){
+                console.log("成功")
+            }
+
+        })
+    }
 
 
 });
