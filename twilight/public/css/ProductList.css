@@ -120,7 +120,7 @@ i {
   text-align: center;
 }
 #prolistS1Right > div h2 {
-  font-size: 24px;
+  font-size: 22px;
 }
 #prolistS1Right > div h3 {
   font-size: 14px;
@@ -134,7 +134,7 @@ i {
   font-size: 14px;
 }
 #prolistS1Right > div p span {
-  font-size: 24px;
+  font-size: 22px;
 }
 #prolistS1Right > div button {
   margin: 10px auto;
@@ -150,6 +150,9 @@ i {
 }
 #ProListSect2 .ProListMenu li {
   float: left;
+}
+#ProListSect2 .ProListMenu li:hover {
+  cursor: pointer;
 }
 #ProListSect2 .ProListMenu li div {
   margin: 0 40px;
@@ -222,7 +225,7 @@ i {
   display: none;
   float: right;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 22px;
   margin-right: 20px;
 }
 #ProListS4Ul li div:last-child p {
@@ -231,6 +234,6 @@ i {
   font-size: 14px;
 }
 #ProListS4Ul li div:last-child p span {
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 22px;
+  line-height: 22px;
 }
