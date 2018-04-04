@@ -5,7 +5,7 @@ const mysql=require('mysql');
 module.exports={
     query:function(sql,arr,backnum){
         const myconnect=mysql.createConnection({
-            host:'localhost',
+            host:'172.16.13.115',
             user:'root',
             password:'root',
             port:'3306',

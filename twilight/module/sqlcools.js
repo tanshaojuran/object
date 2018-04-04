@@ -4,7 +4,7 @@
 module.exports.sqlpool=function(){
     let pool={
         config:{
-            host:'localhost',
+            host:'172.16.13.115',
             user:'root',
             password:'root',
             port:'3306',
