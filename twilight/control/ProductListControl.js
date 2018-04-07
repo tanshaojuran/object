@@ -8,8 +8,8 @@ module.exports={
         let a=req.body.theName;
         console.log(a);
         usermodule.ProListSearch(function(err,data){
-            console.log(data)
-            //res.send(data);
+            console.log(data);
+            res.send(data);
         });
     }
 };
