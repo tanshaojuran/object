@@ -202,8 +202,8 @@ $(function(){
         console.log($(".slider-input").val())
     });
 
-    //收藏
-    $(".ProListXin").on("click",function(){
+    //收藏,动态绑定点击事件
+    $("#ProListS4Ul").on("click","li div .ProListXin",function(){
         if($(this).attr("ProListSC")=="f"){
             $(this).html("&#xe684;");
             $(this).attr("ProListSC","t")
@@ -215,13 +215,24 @@ $(function(){
     });
 
     //列表请求数据
-    var ProListAjax= function (){
+    ProListAjax();
+    function ProListAjax(){
         $.ajax({
             type: "post",
-            url: "ProListShangPin.js",
-            data:"",
-            success: function(html){
-                console.log("成功")
+            url: "/ProListShangPin.do",
+            data:"theName=1111qqq",
+            dataType : "json",
+            success: function(data){
+                var ProductList=$("#ProListS4Ul");
+                ProductList.html("");
+                console.log(data)
+                for(var i=0;i<=data.length;i++){
+                    ProductList.append("<li><div><img src='"+data[i].FaceImg+"'/></div>" +
+                    "<div><h3>"+data[i].name+"</h3>" +
+                    "<i class='icon'>&#xe63f;</i>" +
+                    "<i class='icon ProListXin'ProListSC='f'>&#xe643;</i>" +
+                    "<p>￥<span>"+data[i].price+"</span></p></div></li>");
+                }
             }
 
         })
