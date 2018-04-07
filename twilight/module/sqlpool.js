@@ -6,17 +6,18 @@ module.exports.sqlpool=function(){
     let pool={
         config:{
             //公共数据库
-            host:'172.16.13.115',
-            user:'root',
-            password:'root',
-            port:'3306',
-            database:'twilight'
+            //host:'172.16.13.115',
+            //user:'root',
+            //password:'root',
+            //port:'3306',
+            //database:'twilight'
+
             //本机测试数据库
-            //host:"localhost",
-            //user:"root",
-            //password:"root",
-            //port:3306,
-            //database:"twilight"
+            host:"localhost",
+            user:"root",
+            password:"root",
+            port:3306,
+            database:"twilight"
         },
         connect:function(sql,arr,fn){
             //1.创建一个连接池对象
