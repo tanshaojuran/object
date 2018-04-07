@@ -7,7 +7,8 @@ const sqlpool = require("./sqlpool.js");//引用sqlpool文件
 const db = sqlpool.sqlpool();//执行sqlpoll函数
 module.exports={
     ProListSearch:function(callback){
-        let sql="select * from product_list where 1=1";
+        let sql="select good_id as GoodID,good_name as name," +
+            "shop_price as price,good_img as FaceImg from product_list where 1=1";
         let arr=[];
         db.connect(sql,arr,callback);
     }
