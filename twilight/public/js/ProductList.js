@@ -29,6 +29,26 @@ $(function(){
         }
     });
 
+//价格区间
+    $('.slider-input').jRange({
+        from: 0,
+        to: 3000,
+        step: 100,
+        scale: [0,500,1000,1500,2000,2500,3000],
+        format: '%s',
+        width: 400,
+        showLabels: true,
+        showScale: true
+    });
+    $(".ProListS3Queren").on("click",function(){
+        var ProListClassName;
+        for(var i=0;i<=$(".ProListMenu li").length;i++){
+            if($($(".ProListMenu li")[i]).find("h2").css("color")=="rgb(9, 137, 125)"){
+                ProListClassName=$($(".ProListMenu li")[i]).find("h2").text();
+            }
+        }
+        ProListAjax({"className":ProListClassName,"price":$(".slider-input").val()});
+    });
 
     //产品菜单相关事件
     //鼠标移入事件
@@ -166,43 +186,39 @@ $(function(){
         $(this).find("h2").css({"color":"#09897d"});
         $(this).find("p").css({"color":"#09897d"});
         if($(this).index()==0){
-            $($(".ProListMenu li div img")[$(this).index()]).attr({ src: "../images/icon_djs_01.png"})
-            ProListAjax();
+            $($(".ProListMenu li div img")[$(this).index()]).attr({ src: "../images/icon_djs_01.png"});
+            $('.slider-input').jRange('setValue', '0,3000');
+            ProListAjax({"className":"全部","price":$(".slider-input").val()});
         }
         if($(this).index()==1){
-            $($(".ProListMenu li div img")[$(this).index()]).attr({ src: "../images/icon_djs_02.png"})
-            ProListAjax();
+            $($(".ProListMenu li div img")[$(this).index()]).attr({ src: "../images/icon_djs_02.png"});
+            $('.slider-input').jRange('setValue', '0,3000');
+            ProListAjax({"className":"吊灯","price":$(".slider-input").val()});
         }
         if($(this).index()==2){
-            $($(".ProListMenu li div img")[$(this).index()]).attr({ src: "../images/icon_djs_03.png"})
+            $($(".ProListMenu li div img")[$(this).index()]).attr({ src: "../images/icon_djs_03.png"});
+            $('.slider-input').jRange('setValue', '0,3000');
+            ProListAjax({"className":"壁灯","price":$(".slider-input").val()});
         }
         if($(this).index()==3){
-            $($(".ProListMenu li div img")[$(this).index()]).attr({ src: "../images/icon_djs_04.png"})
+            $($(".ProListMenu li div img")[$(this).index()]).attr({ src: "../images/icon_djs_04.png"});
+            $('.slider-input').jRange('setValue', '0,3000');
+            ProListAjax({"className":"台灯","price":$(".slider-input").val()});
         }
         if($(this).index()==4){
-            $($(".ProListMenu li div img")[$(this).index()]).attr({ src: "../images/icon_djs_05.png"})
+            $($(".ProListMenu li div img")[$(this).index()]).attr({ src: "../images/icon_djs_05.png"});
+            $('.slider-input').jRange('setValue', '0,3000');
+            ProListAjax({"className":"落地灯","price":$(".slider-input").val()});
         }
         if($(this).index()==5){
-            $($(".ProListMenu li div img")[$(this).index()]).attr({ src: "../images/icon_djs_06.png"})
+            $($(".ProListMenu li div img")[$(this).index()]).attr({ src: "../images/icon_djs_06.png"});
+            $('.slider-input').jRange('setValue', '0,3000');
+            ProListAjax({"className":"吸顶灯","price":$(".slider-input").val()});
         }
     });
     //第一个li先执行一次点击事件
     $($(".ProListMenu li")[0]).click();
 
-    //价格区间
-    $('.slider-input').jRange({
-        from: 0,
-        to: 3000,
-        step: 100,
-        scale: [0,500,1000,1500,2000,2500,3000],
-        format: '%s',
-        width: 400,
-        showLabels: true,
-        showScale: true
-    });
-    $(".ProListS3Queren").on("click",function(){
-        console.log($(".slider-input").val())
-    });
 
     //收藏,动态绑定点击事件
     $("#ProListS4Ul").on("click","li div .ProListXin",function(){

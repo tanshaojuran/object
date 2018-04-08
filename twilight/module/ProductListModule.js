@@ -1,15 +1,22 @@
 /**
- * Created by ÑîÓñÃ· on 2018/4/7.
- * Productlist²úÆ·ÁĞ±íÒ³µÄmodule  start
+ * Created by æ¨ç‰æ¢… on 2018/4/7.
+ * Productlistäº§å“åˆ—è¡¨é¡µçš„module  start
  */
-const mysql = require("mysql");//ÒıÓÃmysqlÎÄ¼ş
-const sqlpool = require("./sqlpool.js");//ÒıÓÃsqlpoolÎÄ¼ş
-const db = sqlpool.sqlpool();//Ö´ĞĞsqlpollº¯Êı
+const mysql = require("mysql");//å¼•ç”¨mysqlæ–‡ä»¶
+const sqlpool = require("./sqlpool.js");//å¼•ç”¨sqlpoolæ–‡ä»¶
+const db = sqlpool.sqlpool();//æ‰§è¡Œsqlpollå‡½æ•°
 module.exports={
-    ProListSearch:function(callback){
-        let sql="select good_id as GoodID,good_name as name," +
-            "shop_price as price,good_img as FaceImg from product_list where 1=1";
+    ProListSearch:function(ProListClassName,ProListPrice,callback){
+        ProListPrice=ProListPrice.split(",");
+        let sql="select good_id as GoodID,good_name as name,shop_price as price,good_img as FaceImg " +
+            "from product_list A JOIN product_class B " +
+            "ON A.class_id=B.class_id where 1=1 " +
+            "and shop_price BETWEEN "+ProListPrice[0]+" AND "+ProListPrice[1];
         let arr=[];
+        if(ProListClassName.length!=0 && ProListClassName!="å…¨éƒ¨"){
+            sql+=" and class_name = ?";
+            arr.push(ProListClassName);
+        }
         db.connect(sql,arr,callback);
     }
 };

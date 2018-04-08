@@ -1,14 +1,15 @@
 /**
- * Created by ÑîÓñÃ· on 2018/4/7.
- * Productlist²úÆ·ÁĞ±íÒ³µÄÂ·ÓÉ
+ * Created by æ¨ç‰æ¢… on 2018/4/7.
+ * Productlistäº§å“åˆ—è¡¨é¡µçš„è·¯ç”±
  */
-const usermodule=require('./../module/ProductListModule.js')//ÒıÓÃProductListModule.jsÎÄ¼ş
+const usermodule=require('./../module/ProductListModule.js')//å¼•ç”¨ProductListModule.jsæ–‡ä»¶
 module.exports={
     ProListShangPin:function(req,res){
-        let a=req.body.theName;
-        console.log(a);
-        usermodule.ProListSearch(function(err,data){
-            console.log(data);
+        let ProListClassName=req.body.className;
+        let ProListPrice=req.body.price;
+        console.log(ProListPrice);
+        usermodule.ProListSearch(ProListClassName,ProListPrice,function(err,data){
+            //console.log(data);
             res.send(data);
         });
     }
