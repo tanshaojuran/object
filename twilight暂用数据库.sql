@@ -18,7 +18,7 @@ user_is_use       VARCHAR(10),                      /*是否使用*/
 user_usedate      DATE                              /*注册时间*/
 );
 #DROP TABLE user_list;
-INSERT INTO user_list value(null,'张三','123','123','55525','','','','1','2014-02-05'); 
+INSERT INTO user_list values(null,'张三','123','123','55525','','','','1','2014-02-05'); 
 
 
 
@@ -61,7 +61,7 @@ class_id          INT PRIMARY KEY AUTO_INCREMENT,                        /*类�
 class_name        NVARCHAR(20)                                           /*类别名*/	        
 );
 #DROP TABLE product_class;
-INSERT INTO product_class value(null,'台灯')，(null,'吊灯')，(null,'落地灯')，(null,'壁灯')，(null,'吸顶灯'); 
+INSERT INTO product_class values(null,'台灯'),(null,'吊灯'),(null,'落地灯'),(null,'壁灯'),(null,'吸顶灯'); 
 
 /*8、产品列表*/
 
