@@ -18,7 +18,7 @@ user_is_use       VARCHAR(10),                      /*是否使用*/
 user_usedate      DATE                              /*注册时间*/
 );
 #DROP TABLE user_list;
-INSERT INTO user_list(null,'张三','123','123','55525','','','','1','2014-02-05'); 
+INSERT INTO user_list value(null,'张三','123','123','55525','','','','1','2014-02-05'); 
 
 
 
