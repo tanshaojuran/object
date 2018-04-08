@@ -167,6 +167,7 @@ $(function(){
         $(this).find("p").css({"color":"#09897d"});
         if($(this).index()==0){
             $($(".ProListMenu li div img")[$(this).index()]).attr({ src: "../images/icon_djs_01.png"})
+            ProListAjax();
         }
         if($(this).index()==1){
             $($(".ProListMenu li div img")[$(this).index()]).attr({ src: "../images/icon_djs_02.png"})
@@ -215,12 +216,12 @@ $(function(){
     });
 
     //列表请求数据
-    ProListAjax();
-    function ProListAjax(){
+
+    function ProListAjax(parameter){
         $.ajax({
             type: "post",
             url: "/ProListShangPin.do",
-            data:"theName=1111qqq",
+            data:parameter,
             dataType : "json",
             success: function(data){
                 var ProductList=$("#ProListS4Ul");
