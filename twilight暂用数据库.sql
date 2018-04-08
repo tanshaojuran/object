@@ -85,7 +85,7 @@ good_buttom_img	VARCHAR(100)
 #DROP TABLE product_list;
 
 INSERT INTO product_list 
-(good_id,	good_name,	class_id	good_date,	good_price,	shop_price,	market_price,	good_cs,	good_img)
+(good_id,	good_name,	class_id,	good_date,	good_price,	shop_price,	market_price,	good_cs,	good_img)
 VALUES 
 -- id		产品名		产品类别id	上架时间		商品成本价	商品卖价		市场价		产品参数		图片
 -- 台灯
@@ -158,14 +158,14 @@ user_id       INT,                                          /*用户id*/
 FOREIGN KEY(user_id) REFERENCES user_list(user_id),  
 res_zt	      CHAR(20) DEFAULT'1' NOT NULL,                 /*购物产品状态*/
 car_img       VARCHAR(120),                                 /*产品图片*/
-good_id       INT;
-FOREIGN KEY(good_id) REFERENCES product_list(user_id),      /*产品图片*/
+good_id       INT,
+FOREIGN KEY(good_id) REFERENCES product_list(good_id),      /*产品图片*/
 car_num	      INT NOT NULL,                                 /*购物产品数量*/
 car_price     DOUBLE NOT NULL,                              /*购物产品价格*/
 car_date      DATE NOT NULL                                 /*添加购物车时间*/
 );
 #drop table user_shoppingCar;
-INSERT INTO user_shoppingCar value(null,1,1,"../images/sp_td_01.png",1,225.00,"2012-02-03");
+INSERT INTO user_shoppingCar value(null,1,1,"../images/sp_td_01.png",1,1,225.00,"2012-02-03");
 
 
 
