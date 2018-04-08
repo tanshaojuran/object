@@ -171,6 +171,7 @@ $(function(){
         }
         if($(this).index()==1){
             $($(".ProListMenu li div img")[$(this).index()]).attr({ src: "../images/icon_djs_02.png"})
+            ProListAjax();
         }
         if($(this).index()==2){
             $($(".ProListMenu li div img")[$(this).index()]).attr({ src: "../images/icon_djs_03.png"})
