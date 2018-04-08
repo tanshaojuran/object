@@ -1,9 +1,9 @@
-﻿CREATE DATABASE twilight;
+CREATE DATABASE twilight;
 USE twilight;
 #drop database twilight;
 
 
-/*1、用户表 hello*/
+/*1、用户表 */
 
 CREATE TABLE user_list(
 user_id           INT  PRIMARY KEY AUTO_INCREMENT,
