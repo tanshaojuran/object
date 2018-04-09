@@ -219,19 +219,6 @@ $(function(){
     //第一个li先执行一次点击事件
     $($(".ProListMenu li")[0]).click();
 
-
-    //收藏,动态绑定点击事件
-    $("#ProListS4Ul").on("click","li div .ProListXin",function(){
-        if($(this).attr("ProListSC")=="f"){
-            $(this).html("&#xe684;");
-            $(this).attr("ProListSC","t")
-        }else if($(this).attr("ProListSC")=="t"){
-            $(this).html("&#xe643;");
-            $(this).attr("ProListSC","f")
-        }
-
-    });
-
     //列表请求数据
 
     function ProListAjax(parameter){
@@ -243,11 +230,10 @@ $(function(){
             success: function(data){
                 var ProductList=$("#ProListS4Ul");
                 ProductList.html("");
-                console.log(data)
                 for(var i=0;i<=data.length;i++){
-                    ProductList.append("<li><div><img src='"+data[i].FaceImg+"'/></div>" +
+                    ProductList.append("<li ProductID='"+data[i].GoodID+"'><div><img src='"+data[i].FaceImg+"'/></div>" +
                     "<div><h3>"+data[i].name+"</h3>" +
-                    "<i class='icon'>&#xe63f;</i>" +
+                    "<i class='icon ProListCar'>&#xe63f;</i>" +
                     "<i class='icon ProListXin'ProListSC='f'>&#xe643;</i>" +
                     "<p>￥<span>"+data[i].price+"</span></p></div></li>");
                 }
@@ -255,6 +241,26 @@ $(function(){
 
         })
     }
+    //收藏,动态绑定点击事件
+    $("#ProListS4Ul").on("click","li div .ProListXin",function(e){
+        e.stopPropagation();
+        if($(this).attr("ProListSC")=="f"){
+            $(this).html("&#xe684;");
+            $(this).attr("ProListSC","t")
+        }else if($(this).attr("ProListSC")=="t"){
+            $(this).html("&#xe643;");
+            $(this).attr("ProListSC","f")
+        }
+    });
+    //购物车，动态绑定点击事件
+    $("#ProListS4Ul").on("click","li div .ProListCar",function(e){
+        e.stopPropagation();
+    });
 
+    //点击跳转商品详情页面,动态绑定点击事件
+    $("#ProListS4Ul").on("click","li",function(){
+        var ProductID=$(this).attr("ProductID");
+        location.href ="login.html?ProductData="+ProductID;
+    });
 
 });
