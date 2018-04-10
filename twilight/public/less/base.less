@@ -1,0 +1,344 @@
+@color:#09897d;        //点睛色；
+@bg:#ebebeb;             //背景色；
+@family:"微软雅黑";       //字体
+@family-nav:"方正正纤黑简体";       //字体
+@font-big:32px;          //大号字
+@font-title:24px;        //标题字
+@font-small-title:16px;  //小标题字字
+@font-txt:14px;          //文本字号
+@font-num:12px;          //参数
+@button-width:110px;     //按钮宽
+@button-height:30px;     //按钮高
+@footcolor:#383838;      //尾部背景
+@img:"../images";
+@font-face {
+  font-family: myfont;
+  src:url("../font/方正正纤黑简体_0.ttf")
+}
+@font-face {
+  font-family: logoFont;
+  src:url("../font/Esenin%20script%20One.ttf")
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 613943 */
+  src: url('//at.alicdn.com/t/font_613943_qewemm0nvghw7b9.eot');
+  src: url('//at.alicdn.com/t/font_613943_qewemm0nvghw7b9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_613943_qewemm0nvghw7b9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_613943_qewemm0nvghw7b9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_613943_qewemm0nvghw7b9.svg#iconfont') format('svg');
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+/*头部*/
+  header{
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  z-index: 2;
+  background-color: transparent;
+  &:hover{
+    background-color: white;
+    box-shadow: 1px 1px 1px #cbcbcb;
+  }
+  &> div{
+    position: relative;
+    width: 1149px;
+    margin: 0 auto;
+    .logo,.nav,.login{
+      float: left;
+      height: 70px;
+    }
+    .logo{
+      a{
+        text-decoration: inherit;
+        color: #2e2e2e;
+        font-family:logoFont;
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 60px;
+        letter-spacing: 2px;
+        &:hover{
+          color: #09897d;
+        }
+      }
+    }
+    .nav{
+      margin-left: 50px;
+      ul{
+        &> li{
+          color: #2e2e2e;
+          list-style: none;
+          font-family:myfont;
+          list-style: none;
+          height: 70px;
+          float: left;
+          font-size: 16px;
+          letter-spacing: 1px;
+          font-weight: bold;
+          line-height:70px;
+          &:nth-child(2n-1){
+            width: 100px;
+            text-align: center;
+            &:hover{
+              color: #09897d;
+              cursor: pointer;
+            }
+          }
+          &:nth-child(2n){
+            width: 50px;
+            text-align: center;
+
+          }
+          &:hover .productlist{
+            visibility: visible;
+            -webkit-transform: translateY(0px) ;
+          }
+          .productlist{
+            width: 1149px;
+            background-color: rgba(255, 255, 255, 0.71);
+            visibility: hidden;
+            -webkit-transition: all .2s ease-in-out;
+            -webkit-transform: translateY(30px);
+            height: 160px;
+            position: absolute;
+            left: 0;
+            ul{
+              margin: 0 auto;
+              width: 900px;
+              height: 160px;
+              li{
+                text-align: center;
+                width: 110px;
+                margin: 30px 15px 30px 15px;
+                div{
+                  width: 50px;
+                  height: 45px;
+                  margin: 0 auto;
+                }
+                &:nth-child(1) div{
+                  background-image: url("@{img}/icon_01.png");
+                }
+                &:nth-child(2) div{
+                  background-image: url("@{img}/icon_02.png");
+                }
+                &:nth-child(3) div{
+                  background-image: url("@{img}/icon_03.png");
+                }
+                &:nth-child(4) div{
+                  background-image: url("@{img}/icon_04.png");
+                }
+                &:nth-child(5) div{
+                  background-image: url("@{img}/icon_05.png");
+                }
+                &:nth-child(6) div{
+                  background-image: url("@{img}/icon_06.png");
+                }
+                &:nth-child(1){
+                  &:hover div{
+                    background-image: url("@{img}/icon_djs_01.png");
+                  }
+                }
+                &:nth-child(2){
+                  &:hover div{
+                    background-image: url("@{img}/icon_djs_02.png");
+                  }
+                }
+                &:nth-child(3){
+                  &:hover div{
+                    background-image: url("@{img}/icon_djs_03.png");
+                  }
+                }
+                &:nth-child(4){
+                  &:hover div{
+                    background-image: url("@{img}/icon_djs_04.png");
+                  }
+                }
+                &:nth-child(5){
+                  &:hover div{
+                    background-image: url("@{img}/icon_djs_05.png");
+                  }
+                }
+                &:nth-child(6){
+                  &:hover div{
+                    background-image: url("@{img}/icon_djs_06.png");
+                  }
+                }
+                &> span{
+                  display: inline-block;
+                  width: 120px;
+                  padding-top: 15px;
+                  font-size: 16px;
+                  line-height: 20px;
+                  span{
+                    font-size:8px;
+                  }
+                }
+                &:hover span{
+                  color: @color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .login{
+      line-height: 70px;
+      width:340px;
+      margin-left: 50px;
+       div{
+        float: left;
+        &:nth-child(1){
+          div{
+            width:152px;
+            overflow: hidden;
+            float: left;
+            input{
+              border: 1px solid rgba(46, 46, 46, 0.77);
+              width:140px;
+              height: 20px;
+              border-radius: 6px;
+              background-color: inherit;
+              outline: none;
+              padding-left: 10px;
+              vertical-align: top;
+              margin-top: 24px;
+              -webkit-transition: all linear .3s;
+              -webkit-transform:translateX(155px);
+            }
+          }
+          span{
+            margin-left: 5px;
+            font-family: iconfont;
+            font-size: 20px;
+            &:hover{
+              color: #09897d;
+            cursor: pointer;
+            }
+            &:hover .dh_seach{
+              -webkit-transform:translateX(0px);
+            }
+
+          }
+        }
+        &:nth-child(2){
+          font-size: 16px;
+          font-family: myfont;
+          &> a{
+            text-decoration: inherit;
+            color:#2e2e2e;
+            margin-left: 10px;
+            span{
+              font-family: iconfont;
+              font-size: 20px;
+              &:hover{
+                color: #09897d;
+                cursor: pointer;
+              }
+            }
+          }
+          &> span{
+            margin-left: 12px;
+            &> a{
+              text-decoration: inherit;
+              color:#2e2e2e;
+              font-weight: bold;
+              margin: 0;
+              &:hover span{
+                color: #09897d;
+                cursor: pointer;
+              }
+            }
+            span{
+              margin: 0 5px 0 5px;
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+}
+
+/*尾部*/
+  footer{
+  width: 100%;
+  height: 700px;
+  background-color: @footcolor;
+  font-family: @family;
+  color: white;
+  letter-spacing: 1px;
+  .footer_top{
+    height: 360px;
+    border-bottom: 1px solid grey;
+  }
+  .footer_bottom{
+    margin-top: 60px;
+    height: 280px;
+  }
+  .footer_top,.footer_bottom{
+    .footleft,.footzj,.footmid,.footright{
+      float: left;
+      margin-left: 20px;
+      text-align: left;
+      h3{
+        width: 70%;
+        margin:35px auto 0 auto;
+        font-weight: normal;
+        font-size: 18px;
+      }
+      h5{
+        width: 70%;
+        margin:5px auto 0 auto;
+        font-weight: normal;
+        font-size: 14px;
+      }
+      p{
+        width: 70%;
+        height: 90px;
+        margin:15px auto 0 auto;
+        text-align: left;
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+      h1{
+        width: 70%;
+        margin:55px auto 0 auto;
+      }
+      div{
+        width: 70%;
+        margin: 15px auto 0 auto;
+        text-align: left;
+        letter-spacing: 1px;
+      }
+    }
+    .footleft{
+      width: 24%;
+      div{
+        span{
+          font-family: iconfont;
+          font-size: 32px;
+        }
+      }
+    }
+    .footzj{
+      width: 21%;
+    }
+    .footmid{
+      width: 21%;
+    }
+    .footright{
+      width: 24%;
+      div{
+        span{
+          font-size: 32px;
+        }
+      }
+    }
+  }
+
+}

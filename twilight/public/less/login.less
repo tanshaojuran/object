@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+//公共样式======================================
+@color: #09897d;         //点睛色；
+@family:"微软雅黑";        //字体
+@font-title:24px;        //标题字
+@font-small-title:16px;  //小标题字字
+@font-txt:14px;          //文本字号
+@border-radius:6px;
+//图片路径=======================================
+@img:"../images";
+
+//居中常规宽度====================================
+@center-width01:1149px;
+@center-width02:1069px;
+@center-width03:949px;
+@center-width02:869px;
+.center(@width){
+    width:@width;
+    margin: 0 auto;
+}
+
+//字体引用======================================
+@font-face {
+    font-family: myfont;
+    src: url("../font/方正正纤黑简体_0.ttf");
+}
+
+
+//login-css======================================
+#loginBj{
+    width: 100%;
+    height: 650px;
+    background-image:url("@{img}/dl_bj_01.jpg");
+    form{
+        padding-top: 50px;
+        width: 370px;
+        height: 370px;
+        background-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 0px 0px 5px #b2b2b2;
+        position: absolute;
+        top: 150px;
+        right:200px;
+        text-align: center;
+        font-family:@family;
+        p:first-child{
+            font-size: @font-title;
+            color: #727272;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+        input{
+            width: 290px;
+            height: 45px;
+            border: 1px solid #ffffff;
+            background-color: white;
+            border-radius: @border-radius;
+            margin-bottom: 20px;
+            color: #b3b3b3;
+            padding-left: 10px;
+            outline: none;
+        }
+        button:nth-child(4){
+            width: 300px;
+            height: 45px;
+            border: 1px solid @color;
+            background-color: @color;
+            border-radius: @border-radius;
+            margin-bottom: 20px;
+            color: white;
+            padding-left: 10px;
+            outline: none;
+            font-size: 18px;
+            letter-spacing: 5px;
+            &:hover{
+                background-color: #097f73;
+                cursor: pointer;
+            }
+        }
+        p:last-child{
+            font-size: @font-txt;
+            a{
+                text-decoration : none;
+                &:first-child{
+                    color: #727272;
+                    &:hover{
+                        text-decoration:underline;
+                    }
+                }
+                &:last-child{
+                    color: @color;
+                    &:hover{
+                        text-decoration:underline;
+                    }
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,715 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+//公共样式======================================
+@color:#09897d;         //点睛色；
+@bg: #ebebeb;             //背景色；
+@fontColor: #414141;
+@family:"微软雅黑";        //字体
+@font-big:32px;          //大号字
+@font-title:22px;        //标题字
+@font-small-title:16px;  //小标题字字
+@font-txt:14px;          //文本字号
+@font-num:12px;          //参数
+@button-width:110px;     //按钮宽
+@button-height:30px;     //按钮高
+@border-radius:6px;
+@sy_bk_contMargin:-185px;
+.title{
+  font-family: myfont;
+  text-align: center;
+  color: @fontColor;
+  letter-spacing: 2px;
+  &:nth-child(1){
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  &:nth-child(2){
+    font-size: 28px;
+    margin-bottom: 60px;
+  }
+}
+
+//图片路径=======================================
+@img:"../images";
+
+//-----按钮样式------------
+.sy_button{
+  font-family: myfont;
+  font-size:@font-small-title;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color:@fontColor;
+  width: @button-width;
+  height: @button-height;
+  border:1px solid @fontColor;
+  border-radius: @border-radius;
+  background-color:transparent;
+  outline: none;
+  position: absolute;
+}
+.sy_buttonHover{
+  background-color: @color;
+  color: white;
+  border: 1px solid @color;
+  cursor: pointer;
+}
+
+.sy_NewButton{
+  font-family: myfont;
+  font-size:@font-small-title;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background-color: inherit;
+  color:@fontColor;
+  width: @button-width;
+  height: @button-height;
+  border:1px solid @fontColor;
+  border-radius: @border-radius;
+  outline: none;
+}
+.sy_NewButtonHover{
+  cursor: pointer;
+  background-color: @color;
+  color: white;
+  border: 1px solid @color;
+}
+
+//居中常规宽度====================================
+@center-width01:1149px;
+@center-width02:1069px;
+@center-width03:949px;
+@center-width02:869px;
+.center(@width){
+  width:@width;
+  margin: 0 auto;
+}
+
+//字体引用======================================
+@font-face {
+  font-family: myfont;
+  src: url("../font/方正正纤黑简体_0.ttf");
+}
+@font-face {
+  font-family: weiRuanFont;
+  src: url("../font/msyh.ttf")
+}
+
+//首页css======================================
+
+//==part1
+#sy_part1{
+  width: 100%;
+}
+#sy_banner{
+  width:1349px;
+  height: 640px;
+  overflow: hidden;
+  position: relative;
+}
+#sy_banner>div{
+  width: 1349px;
+  height: 640px;
+  position: absolute;
+}
+#sy_banner>div>a>input{
+  .sy_button;
+}
+#sy_banner>div>a>input:hover{
+  .sy_buttonHover;
+}
+#sy_banner>div:nth-child(1){
+  background-image: url("@{img}/sy_banner01.png");
+}
+#sy_banner>div:nth-child(1)>img{
+  margin-left: 470px;
+}
+#sy_banner>div:nth-child(1)>a>input{
+  top: 360px;
+  margin-left:480px;
+}
+#sy_banner>div:nth-child(2){
+  background-image: url("@{img}/sy_banner02.png");
+}
+#sy_banner>div:nth-child(2)>img{
+  margin-left: 320px;
+}
+#sy_banner>div:nth-child(2)>a>input{
+  top: 450px;
+  margin-left:345px;
+}
+#sy_banner>div:nth-child(3){
+  background-image: url("@{img}/sy_banner03.png");
+}
+#sy_banner>div:nth-child(3)>img{
+  margin-left: 420px;
+}
+#sy_banner>div:nth-child(3)>a>input{
+  top: 390px;
+  margin-left:440px;
+}
+#sy_part1>div:nth-child(2){
+  display: block;
+  position: absolute;
+  left: 50%;
+  z-index: 2;
+  -webkit-transform: translateX(-50%);
+  margin-top: -60px;
+}
+#sy_part1>div:nth-child(2)>span{
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 12px;
+  background-color: #dfdfdf;
+  margin-left: 10px;
+}
+
+//==part2
+#sy_part2{
+  width: 100%;
+  height: 700px;
+  background-color: white;
+  &> div{
+    .center(@center-width02);
+    height: 700px;
+    padding-top: 40px;
+    &>p{
+        .title;
+      }
+    #sy_part2_leftImg{
+        width: 440px;
+        height: 440px;
+        float: left;
+    }
+    #sy_part2_rightCont{
+      float: left;
+      h3{
+        float: left;
+        font-size:@font-title;
+        font-weight: 600;
+        font-family: "myfont";
+        margin: 30px 0 30px 25px;
+      }
+      p{
+        letter-spacing: 1px;
+        float: left;
+        font-size:@font-txt;
+        font-family: "weiRuanFont";
+        margin: 28px 0 30px 30px;
+        color: @color;
+        span{
+          color: @color;
+          font-size:@font-title;
+
+        }
+      }
+      .sy_part2_bj{
+        background-color: #414141;
+        width: 410px;
+        height: 190px;
+        clear: both;
+        margin-left: -25px;
+        .sy_part2_imgXt{
+          margin-right: -25px;
+          div{
+            float: right;
+            border: 5px solid rgba(255, 255, 255, 0);
+            line-height: 0;
+            margin: 30px 0 20px 10px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+
+      }
+
+      }
+      #sy_part2_btn{
+        .sy_NewButton;
+        margin: 30px 0 0 25px;
+          &:hover{
+            .sy_NewButtonHover;
+          }
+      }
+
+    }
+
+  }
+}
+
+
+//==part3
+.sy_partBj{
+  width: 100%;
+  height: 285px;
+  padding-top: 60px;
+}
+.sy_partPrice{
+  font-size:@font-txt;
+  span{
+    font-size:@font-title;
+  }
+}
+.sy_part3Txt{
+  font-family: weiRuanFont;
+  &:first-child{
+    margin-top: 60px;
+    font-family: myfont;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: @color;
+  }
+  &:nth-child(2){
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+  &:nth-child(3),&:nth-child(6){
+    margin: 15px 0;
+    span{
+      display: inline-block;
+      width: 16px;
+      height: 2px;
+      background-color: #727272;
+    }
+  }
+  &:nth-child(4){
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+  &:nth-child(5){
+    margin-top: 5px;
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+  &:last-child{
+    .sy_partPrice;
+    color: white;
+    span{
+      color: white;
+    }
+    width: 110px;
+    height: 30px;
+    background-color: @color;
+    border-radius: 6px;
+    margin-left: 95px;
+  }
+}
+#sy_part3{
+  width: 100%;
+  height:1680px;
+  >div{
+    &:nth-child(1){
+      .sy_partBj;
+      background-image: url("@{img}/sy_bankuai_bj_01.png");
+      p{
+        .title;
+      }
+    }
+    &:nth-child(2){
+      .center(@center-width03);
+      height: 1390px;
+      margin-top: @sy_bk_contMargin;
+      padding: 40px 0;
+      background-color: white;
+      >div{
+        .center(@center-width02);
+        height: 400px;
+        margin-bottom: 40px;
+        &:nth-child(1),&:nth-child(2){
+          background-color: #EEEEEE;
+          a{
+            float: left;
+            overflow: hidden;
+            width: 565px;
+            height: 400px;
+            img{
+              -webkit-transition:all linear .2s;
+            }
+            &:hover img{
+              -webkit-transform: scale(1.05,1.05);
+              cursor: pointer;
+            }
+          }
+          div{
+            float: left;
+            height: 400px;
+            width: 300px;
+            text-align: center;
+            p{
+              .sy_part3Txt;
+            }
+          }
+        }
+        &:nth-child(3){
+          height: 520px;
+          div{
+            float: left;
+            background-color:#eeeeee;
+            height: 520px;
+            a{
+              display: block;
+              width: 412px;
+              height: 450px;
+              overflow: hidden;
+              img{
+                -webkit-transition:all linear .2s;
+              }
+              &:hover img{
+                -webkit-transform: scale(1.05,1.05);
+                cursor: pointer;
+              }
+            }
+            &:first-child{
+              margin-right: 40px;
+            }
+          }
+          p{
+            &:nth-child(2){
+              font-size: 18px;
+              letter-spacing: 1px;
+              margin-top: 25px;
+              margin-left: 40px;
+            }
+            &:last-child{
+              .sy_partPrice;
+              margin-left: 260px;
+              margin-top: -25px;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+//==part4
+.sy_part4Txt{
+  font-family: weiRuanFont;
+  &:first-child{
+    margin-top: 60px;
+    font-family: myfont;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: @color;
+  }
+  &:nth-child(2){
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+  &:nth-child(3),&:nth-child(5){
+    margin: 15px 0;
+    span{
+      display: inline-block;
+      width: 16px;
+      height: 2px;
+      background-color: #727272;
+    }
+  }
+  &:nth-child(5){
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+  &:last-child{
+    .sy_partPrice;
+    margin-top:10px;
+  }
+}
+#sy_part4{
+  width: 100%;
+  height: 1535px;
+  >div{
+    &:first-child{
+      .sy_partBj;
+      background-image: url("@{img}/sy_bankuai_bj_02.png");
+      p{
+        .title;
+      }
+    }
+    &:last-child{
+      height: 1260px;
+      .center(@center-width03);
+      margin-top: @sy_bk_contMargin;
+      padding: 40px 0;
+      background-color: white;
+      > div{
+        .center(@center-width02);
+        margin-bottom: 40px;
+        &:first-child{
+          height: 400px;
+          background-color: #EEEEEE;
+          a{
+            float: left;
+            width: 565px;
+            height: 400px;
+            overflow: hidden;
+            img{
+              -webkit-transition:all linear .2s;
+            }
+            &:hover img{
+              -webkit-transform: scale(1.05,1.05);
+              cursor: pointer;
+            }
+          }
+          div:last-child{
+            float: left;
+            width: 300px;
+            height: 400px;
+            text-align: center;
+            p{
+              .sy_part4Txt;
+            }
+          }
+        }
+        &:nth-child(2),&:last-child{
+          height: 380px;
+          div{
+            float: left;
+            height: 380px;
+            background-color: #EEEEEE;
+            a{
+              display: block;
+              width: 270px;
+              height: 330px;
+              overflow: hidden;
+              img{
+                -webkit-transition:all linear .2s;
+              }
+              &:hover img{
+                -webkit-transform: scale(1.05,1.05);
+                cursor: pointer;
+              }
+            }
+            p{
+              &:nth-child(2){
+                font-size: @font-small-title;
+                letter-spacing: 1px;
+                margin-left: 15px;
+                margin-top: 15px;
+              }
+              &:last-child{
+                font-size:@font-txt;
+                span{
+                  font-size:20px;
+                }
+                margin-left: 160px;
+                margin-top: -24px;
+              }
+            }
+            &:first-child,&:nth-child(2){
+              margin-right: 29px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+//==part5
+#sy_part5{
+  width: 100%;
+  height: 1020px;
+  div:nth-child(1){
+    width: 100%;
+    height: 285px;
+    padding-top: 60px;
+    background-image: url("@{img}/sy_bankuai_bj_03.png");
+    p {
+      .title;
+    }
+  }
+  div:nth-child(2){
+    .center(@center-width03);
+    margin-top: @sy_bk_contMargin;
+    padding: 40px 0;
+    background-color: white;
+    div:nth-child(1){
+      .center(@center-width02);
+      padding: 0;
+      height: 770px;
+      background-image: none;
+      #sy_gywm_date{
+        width:60px;
+        height: 30px;
+        margin: 0;
+        padding: 20px 0 0 0;
+        overflow: hidden;
+        & div{
+          width: 180px;
+          -webkit-transition: all linear .3s;
+          & p{
+            font-size: 18px;
+            font-family: weiRuanFont;
+            float: left;
+          }
+        }
+      }
+      #sy_gywm_btn{
+        width:60px;
+        position: relative;
+        top: 450px;
+        i span{
+          font-size: 18px;
+          display: inline-block;
+          margin-right: 10px;
+          font-family: myfont;
+        }
+
+      }
+      & #sy_gywm_cont{
+        width: 300px;
+        position: relative;
+        top: -60px;
+        left: 100px;
+        overflow: hidden;
+        & div{
+          width: 900px;
+          height: 240px;
+          -webkit-transition: all linear .3s;
+          & div{
+            margin: 0;
+            padding: 0;
+            width: auto;
+            height: 240px;
+            float: left;
+            & p{
+              letter-spacing: 0;
+              margin: 0;
+              padding: 0;
+              width: 300px;
+              font-family: weiRuanFont;
+              text-align: justify;
+              &:nth-child(1){
+                font-size: 18px;
+                margin-bottom: 12px;
+                line-height: 28px;
+              }
+              &:nth-child(2){
+                font-size: 12px;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+              }
+              &:nth-child(3){
+                font-size: 14px;
+                line-height: 20px;
+              }
+            }
+          }
+        }
+      }
+      & #sy_gywm_img{
+        overflow: hidden;
+        width: 430px;
+        height: 770px;
+        position: relative;
+        top: -550px;
+        left: 440px;
+        div{
+          width:1290px;
+          -webkit-transition: all linear .3s;
+          a{
+            display: block;
+            float: left;
+          }
+
+      }
+      }
+    }
+
+
+  }
+}
+
+//==part6
+.sy_sjtdTxt{
+  letter-spacing: 0;
+  font-family: weiRuanFont;
+  margin: 0;
+  padding: 0;
+    &:nth-child(1){
+      font-size: 22px;
+      font-family: myfont;
+      margin-top: 60px;
+      color: @color;
+      letter-spacing: 2px;
+    }
+    &:nth-child(2),&:nth-child(4){
+      font-size: 14px;
+    }
+    &:nth-child(3),&:nth-child(5){
+      span{
+        display:inline-block;
+        width: 16px;
+        height: 2px;
+        background-color: #727272;
+      }
+      margin: 10px 0;
+    }
+}
+#sy_part6 {
+  width: 100%;
+  height: 1010px;
+  div:nth-child(1) {
+    width: 100%;
+    height: 285px;
+    padding-top: 60px;
+    background-image: url("@{img}/sy_bankuai_bj_04.png");
+    p {
+      .title;
+    }
+  }
+  div:nth-child(2) {
+    .center(@center-width03);
+    margin-top: @sy_bk_contMargin;
+    padding: 40px 0;
+    background-color: white;
+
+    div{
+      .center(@center-width02);
+      padding: 0;
+      background-image: none;
+      font-family: "微软雅黑";
+    }
+    div:nth-child(1){
+      height: 400px;
+      margin-bottom: 25px;
+      background-color: #eeeeee;
+      div{
+        width: 180px;
+        position: relative;
+        top: -400px;
+        left: 280px;
+        background-color: #eeeeee;
+        letter-spacing: 0;
+        font-family: "微软雅黑";
+       text-align: justify;
+        p{
+          .sy_sjtdTxt;
+        }
+        a input{
+          .sy_button;
+          margin-left: 35px;
+          margin-top: 20px;
+          &:hover{
+            .sy_buttonHover;
+          }
+        }
+      }
+    }
+    div:nth-child(2){
+      height: 290px;
+      img{
+        margin-right:25px;
+        &:nth-child(3){
+          margin: 0;
+        }
+      }
+    }
+
+  }
+}
+
