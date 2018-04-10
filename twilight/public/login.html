@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/login.css"/>
+</head>
+<body>
+<%-include head.html %>
+<div id="loginBj">
+    <form >
+        <p>登录账户</p>
+        <input id=userName type="text"  placeholder="账户名"/>
+        <input id=userPwd type="password"  placeholder="密码"/>
+        <button id="btnLogin" type="button">签到</button>
+        <p>
+            <a href="">忘记密码？</a>
+            <a href="">注册</a>
+        </p>
+    </form>
+</div>
+<!--onblur="checkPwd()"-->
+<script src="less.min.js"></script>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>
