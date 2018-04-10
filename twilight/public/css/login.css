@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: myfont;
+  src: url("../font/方正正纤黑简体_0.ttf");
+}
+#loginBj {
+  width: 100%;
+  height: 650px;
+  background-image: url("../images/dl_bj_01.jpg");
+}
+#loginBj form {
+  padding-top: 50px;
+  width: 370px;
+  height: 370px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 0px 5px #b2b2b2;
+  position: absolute;
+  top: 150px;
+  right: 200px;
+  text-align: center;
+  font-family: "微软雅黑";
+}
+#loginBj form p:first-child {
+  font-size: 24px;
+  color: #727272;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+#loginBj form input {
+  width: 290px;
+  height: 45px;
+  border: 1px solid #ffffff;
+  background-color: white;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  color: #b3b3b3;
+  padding-left: 10px;
+  outline: none;
+}
+#loginBj form button:nth-child(4) {
+  width: 300px;
+  height: 45px;
+  border: 1px solid #09897d;
+  background-color: #09897d;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  color: white;
+  padding-left: 10px;
+  outline: none;
+  font-size: 18px;
+  letter-spacing: 5px;
+}
+#loginBj form button:nth-child(4):hover {
+  background-color: #097f73;
+  cursor: pointer;
+}
+#loginBj form p:last-child {
+  font-size: 14px;
+}
+#loginBj form p:last-child a {
+  text-decoration: none;
+}
+#loginBj form p:last-child a:first-child {
+  color: #727272;
+}
+#loginBj form p:last-child a:first-child:hover {
+  text-decoration: underline;
+}
+#loginBj form p:last-child a:last-child {
+  color: #09897d;
+}
+#loginBj form p:last-child a:last-child:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,348 @@
+@font-face {
+  font-family: myfont;
+  src: url("../font/方正正纤黑简体_0.ttf");
+}
+@font-face {
+  font-family: logoFont;
+  src: url("../font/Esenin%20script%20One.ttf");
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_613943_qewemm0nvghw7b9.eot');
+  src: url('//at.alicdn.com/t/font_613943_qewemm0nvghw7b9.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_613943_qewemm0nvghw7b9.woff') format('woff'), url('//at.alicdn.com/t/font_613943_qewemm0nvghw7b9.ttf') format('truetype'), url('//at.alicdn.com/t/font_613943_qewemm0nvghw7b9.svg#iconfont') format('svg');
+  
+  /* project id 613943 */
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+/*头部*/
+header {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  z-index: 2;
+  background-color: transparent;
+}
+header:hover {
+  background-color: white;
+  box-shadow: 1px 1px 1px #cbcbcb;
+}
+header > div {
+  position: relative;
+  width: 1149px;
+  margin: 0 auto;
+}
+header > div .logo,
+header > div .nav,
+header > div .login {
+  float: left;
+  height: 70px;
+}
+header > div .logo a {
+  text-decoration: inherit;
+  color: #2e2e2e;
+  font-family: logoFont;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 60px;
+  letter-spacing: 2px;
+}
+header > div .logo a:hover {
+  color: #09897d;
+}
+header > div .nav {
+  margin-left: 50px;
+}
+header > div .nav ul > li {
+  color: #2e2e2e;
+  font-family: myfont;
+  list-style: none;
+  height: 70px;
+  float: left;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  line-height: 70px;
+}
+header > div .nav ul > li:nth-child(2n-1) {
+  width: 100px;
+  text-align: center;
+}
+header > div .nav ul > li:nth-child(2n-1):hover {
+  color: #09897d;
+  cursor: pointer;
+}
+header > div .nav ul > li:nth-child(2n) {
+  width: 50px;
+  text-align: center;
+}
+header > div .nav ul > li:hover .productlist {
+  visibility: visible;
+  -webkit-transform: translateY(0px);
+}
+header > div .nav ul > li .productlist {
+  width: 1149px;
+  background-color: rgba(255, 255, 255, 0.71);
+  visibility: hidden;
+  -webkit-transition: all 0.2s ease-in-out;
+  -webkit-transform: translateY(30px);
+  height: 160px;
+  position: absolute;
+  left: 0;
+}
+header > div .nav ul > li .productlist ul {
+  margin: 0 auto;
+  width: 900px;
+  height: 160px;
+}
+header > div .nav ul > li .productlist ul li {
+  text-align: center;
+  width: 110px;
+  margin: 30px 15px 30px 15px;
+}
+header > div .nav ul > li .productlist ul li div {
+  width: 50px;
+  height: 45px;
+  margin: 0 auto;
+}
+header > div .nav ul > li .productlist ul li:nth-child(1) div {
+  background-image: url("../images/icon_01.png");
+}
+header > div .nav ul > li .productlist ul li:nth-child(2) div {
+  background-image: url("../images/icon_02.png");
+}
+header > div .nav ul > li .productlist ul li:nth-child(3) div {
+  background-image: url("../images/icon_03.png");
+}
+header > div .nav ul > li .productlist ul li:nth-child(4) div {
+  background-image: url("../images/icon_04.png");
+}
+header > div .nav ul > li .productlist ul li:nth-child(5) div {
+  background-image: url("../images/icon_05.png");
+}
+header > div .nav ul > li .productlist ul li:nth-child(6) div {
+  background-image: url("../images/icon_06.png");
+}
+header > div .nav ul > li .productlist ul li:nth-child(1):hover div {
+  background-image: url("../images/icon_djs_01.png");
+}
+header > div .nav ul > li .productlist ul li:nth-child(2):hover div {
+  background-image: url("../images/icon_djs_02.png");
+}
+header > div .nav ul > li .productlist ul li:nth-child(3):hover div {
+  background-image: url("../images/icon_djs_03.png");
+}
+header > div .nav ul > li .productlist ul li:nth-child(4):hover div {
+  background-image: url("../images/icon_djs_04.png");
+}
+header > div .nav ul > li .productlist ul li:nth-child(5):hover div {
+  background-image: url("../images/icon_djs_05.png");
+}
+header > div .nav ul > li .productlist ul li:nth-child(6):hover div {
+  background-image: url("../images/icon_djs_06.png");
+}
+header > div .nav ul > li .productlist ul li > span {
+  display: inline-block;
+  width: 120px;
+  padding-top: 15px;
+  font-size: 16px;
+  line-height: 20px;
+}
+header > div .nav ul > li .productlist ul li > span span {
+  font-size: 8px;
+}
+header > div .nav ul > li .productlist ul li:hover span {
+  color: #09897d;
+}
+header > div .login {
+  line-height: 70px;
+  width: 340px;
+  margin-left: 50px;
+}
+header > div .login div {
+  float: left;
+}
+header > div .login div:nth-child(1) div {
+  width: 152px;
+  overflow: hidden;
+  float: left;
+}
+header > div .login div:nth-child(1) div input {
+  border: 1px solid rgba(46, 46, 46, 0.77);
+  width: 140px;
+  height: 20px;
+  border-radius: 6px;
+  background-color: inherit;
+  outline: none;
+  padding-left: 10px;
+  vertical-align: top;
+  margin-top: 24px;
+  -webkit-transition: all linear .3s;
+  -webkit-transform: translateX(155px);
+}
+header > div .login div:nth-child(1) span {
+  margin-left: 5px;
+  font-family: iconfont;
+  font-size: 20px;
+}
+header > div .login div:nth-child(1) span:hover {
+  color: #09897d;
+  cursor: pointer;
+}
+header > div .login div:nth-child(1) span:hover .dh_seach {
+  -webkit-transform: translateX(0px);
+}
+header > div .login div:nth-child(2) {
+  font-size: 16px;
+  font-family: myfont;
+}
+header > div .login div:nth-child(2) > a {
+  text-decoration: inherit;
+  color: #2e2e2e;
+  margin-left: 10px;
+}
+header > div .login div:nth-child(2) > a span {
+  font-family: iconfont;
+  font-size: 20px;
+}
+header > div .login div:nth-child(2) > a span:hover {
+  color: #09897d;
+  cursor: pointer;
+}
+header > div .login div:nth-child(2) > span {
+  margin-left: 12px;
+}
+header > div .login div:nth-child(2) > span > a {
+  text-decoration: inherit;
+  color: #2e2e2e;
+  font-weight: bold;
+  margin: 0;
+}
+header > div .login div:nth-child(2) > span > a:hover span {
+  color: #09897d;
+  cursor: pointer;
+}
+header > div .login div:nth-child(2) > span span {
+  margin: 0 5px 0 5px;
+}
+/*尾部*/
+footer {
+  width: 100%;
+  height: 700px;
+  background-color: #383838;
+  font-family: "微软雅黑";
+  color: white;
+  letter-spacing: 1px;
+}
+footer .footer_top {
+  height: 360px;
+  border-bottom: 1px solid grey;
+}
+footer .footer_bottom {
+  margin-top: 60px;
+  height: 280px;
+}
+footer .footer_top .footleft,
+footer .footer_bottom .footleft,
+footer .footer_top .footzj,
+footer .footer_bottom .footzj,
+footer .footer_top .footmid,
+footer .footer_bottom .footmid,
+footer .footer_top .footright,
+footer .footer_bottom .footright {
+  float: left;
+  margin-left: 20px;
+  text-align: left;
+}
+footer .footer_top .footleft h3,
+footer .footer_bottom .footleft h3,
+footer .footer_top .footzj h3,
+footer .footer_bottom .footzj h3,
+footer .footer_top .footmid h3,
+footer .footer_bottom .footmid h3,
+footer .footer_top .footright h3,
+footer .footer_bottom .footright h3 {
+  width: 70%;
+  margin: 35px auto 0 auto;
+  font-weight: normal;
+  font-size: 18px;
+}
+footer .footer_top .footleft h5,
+footer .footer_bottom .footleft h5,
+footer .footer_top .footzj h5,
+footer .footer_bottom .footzj h5,
+footer .footer_top .footmid h5,
+footer .footer_bottom .footmid h5,
+footer .footer_top .footright h5,
+footer .footer_bottom .footright h5 {
+  width: 70%;
+  margin: 5px auto 0 auto;
+  font-weight: normal;
+  font-size: 14px;
+}
+footer .footer_top .footleft p,
+footer .footer_bottom .footleft p,
+footer .footer_top .footzj p,
+footer .footer_bottom .footzj p,
+footer .footer_top .footmid p,
+footer .footer_bottom .footmid p,
+footer .footer_top .footright p,
+footer .footer_bottom .footright p {
+  width: 70%;
+  height: 90px;
+  margin: 15px auto 0 auto;
+  text-align: left;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+footer .footer_top .footleft h1,
+footer .footer_bottom .footleft h1,
+footer .footer_top .footzj h1,
+footer .footer_bottom .footzj h1,
+footer .footer_top .footmid h1,
+footer .footer_bottom .footmid h1,
+footer .footer_top .footright h1,
+footer .footer_bottom .footright h1 {
+  width: 70%;
+  margin: 55px auto 0 auto;
+}
+footer .footer_top .footleft div,
+footer .footer_bottom .footleft div,
+footer .footer_top .footzj div,
+footer .footer_bottom .footzj div,
+footer .footer_top .footmid div,
+footer .footer_bottom .footmid div,
+footer .footer_top .footright div,
+footer .footer_bottom .footright div {
+  width: 70%;
+  margin: 15px auto 0 auto;
+  text-align: left;
+  letter-spacing: 1px;
+}
+footer .footer_top .footleft,
+footer .footer_bottom .footleft {
+  width: 24%;
+}
+footer .footer_top .footleft div span,
+footer .footer_bottom .footleft div span {
+  font-family: iconfont;
+  font-size: 32px;
+}
+footer .footer_top .footzj,
+footer .footer_bottom .footzj {
+  width: 21%;
+}
+footer .footer_top .footmid,
+footer .footer_bottom .footmid {
+  width: 21%;
+}
+footer .footer_top .footright,
+footer .footer_bottom .footright {
+  width: 24%;
+}
+footer .footer_top .footright div span,
+footer .footer_bottom .footright div span {
+  font-size: 32px;
+}
