@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet/less" href="less/zhuce.less"/>
+</head>
+<body>
+<div id="loginBj">
+    <form>
+        <p>注册账户</p>
+        <input type="text"name="txtPhone" id="txtPhone" placeholder="手机注册"/>
+        <input type="text" name="txtPss" id="txtPss"placeholder="密码"/>
+        <input type="text" name="txtCode" id="txtCode" placeholder="验证码"/>
+        <input type="button"id="btnCode"value="获取验证码"/>
+        <input type="button" id="btnReg"value="注册" />
+    </form>
+</div>
+<script src="js/less.js"></script>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/ajax.js"></script>
+<script type="text/javascript">
+
+    var btnCode = document.getElementById('btnCode');
+    var btnReg = document.getElementById('btnReg');
+    var txtPhone = document.getElementById('txtPhone');
+    var txtCode = document.getElementById('txtCode');
+    var txtPss = document.getElementById('txtPss');
+    var username=parseInt(Math.random()*100000+111111);
+    console.log(username);
+    btnCode.onclick=function(){
+        var cc=txtPhone.value;          //输入手机号
+        var bb=txtPss.value;            //密码输入值
+        var zz=/^[A-Za-z0-9]{6,20}$/;  //密码正则
+        var dd=/^[1][3,4,5,7,8][0-9]{9}$/; //手机号正则
+        var aa=dd.test(cc);
+        var ee=zz.test(bb);
+//        正则判断
+        if(cc.length==0){
+            alert('请输入手机号')
+        }
+        else  if(aa==false){
+            alert('请输入正确的手机号')
+        }
+        else if(bb.length==0){
+            alert('请输入密码')
+        }
+        else if(ee==false){
+            alert('请输入至少6位密码')
+        }
+        else{
+            ajaxfn({
+                "method":"post",
+                "url":"/sendCode.do",
+                "parm":"phone="+txtPhone.value,
+                "backnum":function(xhr){
+                    alert(xhr.responseText);
+                }
+            })
+        }
+
+    };
+//    注册验证
+    btnReg.onclick=function(){
+        if(txtPhone.value.length==0){
+            alert('请输入手机号');
+        }else if(txtCode.value.trim().length==0){
+            alert('请输入验证码');
+        }else{
+            var parm = "phone="+txtPhone.value+"&code="+txtCode.value+"&username="+username+"&pwd="+txtPss.value;
+            //发送请求
+            ajaxfn({
+                "method":"post",
+                "url":"/reg.do",
+                "parm":parm,
+                "backnum":function(xhr){
+                    console.log(xhr.responseText)
+                    if(xhr.responseText=="ok"){
+                        alert('注册成功')
+                    }else{
+                        alert(xhr.responseText);
+                    }
+                }
+            })
+        }
+    }
+</script>
+</body>
+</html>
