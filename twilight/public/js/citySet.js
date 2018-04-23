@@ -4,7 +4,7 @@ function SelCity(obj,e) {
     var dal = '<div class="_citys"><span title="关闭" id="cColse" >×</span><ul id="_citysheng" class="_citys0"><li class="citySel">省份</li><li>城市</li><li>区县</li></ul><div id="_citys0" class="_citys1"></div><div style="display:none" id="_citys1" class="_citys1"></div><div style="display:none" id="_citys2" class="_citys1"></div></div>';
     Iput.show({ id: ths, event: e, content: dal,width:"470"});
     $("#cColse").click(function () {
-        Iput.colse();
+        Iput.colse()
     });
     var tb_province = [];
     var b = province;

@@ -1,6 +1,6 @@
 ﻿/* 代码整理：大头网 www.datouwang.com */
 Array.prototype.unique = function () {//去数组重复
-    return this.sort().join(",,").replace(/(,|^)([^,]+)(,,\2)+(,|$)/g, "$1$2$4").replace(/,,+/g, ",").replace(/,$/, "").split(",");
+    return this.sort().join(",,").replace(/(,|^)([^,]+)(,,\2)+(,|$)/g, "$1$2$4").replace(/,,+/g, ",").replace(/,$/, "").split(",")
 }
 var Iput = {
     confg: {
