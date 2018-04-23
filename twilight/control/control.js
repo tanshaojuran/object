@@ -3,6 +3,22 @@
  */
 const usermodule=require('./../module/module.js')//引用module.js文件
 module.exports={
+	//登录验证
+    userlogin:function(req,res){
+        let user=req.body.username;
+        let pwd =req.body.password;
+        usermodule.userlogin(user,pwd,function(err,data){
+            //console.log(data[0]);
+            if(data.length==0){
+                res.send('login.html')
+            }else{
+                req.session.a=data[0];
+                console.log(req.session.a)
+                //res.redirect('index.html');
+                res.send('index.html');
+            }
+        })
+    },
     //发送验证码短信
     sendCode:function(req,res){
         let phone  = req.body.phone; //发送验证码到对应的手机号
@@ -42,6 +58,40 @@ module.exports={
             res.send('验证码错误')
         });
     },
+		//购物车列表
+    carlib:function(req,res){
+        usermodule.carlib(function(err,data){
+            //console.log(data);
+            res.send(data);
+        })
+    },
+
+    //购物车产品数量加减
+    carnum:function(req,res){
+        let a= req.query.carnum;
+        let b= req.query.carid;
+        usermodule.carnum(a,b,function(err,data){
+            if(data){
+                res.send('ok');
+            }else{
+                res.send('faile');
+            }
+        })
+    },
+
+    //购物车产品删除
+    delcar:function(req,res){
+        let b= req.query.id;
+        //console.log(b);
+        usermodule.delcar(b,function(err,data){
+            if(data){
+                res.send('ok');
+            }else{
+                res.send('faile');
+            }
+        })
+    }
+
 
 };
 
