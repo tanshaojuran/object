@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<link rel="stylesheet/less" href="./../less/style.less"/>-->
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/orderstyle.css"/>
+    <style>
+        .detailedaddress{
+            position: relative;
+        }
+        .detailedaddress_lianxirenxinxi{
+            height: 40px;
+            line-height: 40px;
+            position: relative;
+        }
+        .shoujianren{
+            margin-left: 4%;
+        }
+        .shoujihao{
+            left: 65%;
+            position: absolute;
+        }
+        .detailedaddress_dizhi{
+            margin-top: 5%;
+            margin-left: 4%;
+            margin-right: 20%;
+        }
+        .detailedaddress_xiugaishanchu{
+            position: absolute;
+            border-top: 1px solid #EFEFEF;
+            width: 100%;
+            top: 80%;
+            padding-top: 4%;
+        }
+        .morendizhi{
+            margin-left: 4%;
+            position: absolute;
+        }
+        * { -ms-word-wrap: break-word; word-wrap: break-word; }
+        html { -webkit-text-size-adjust: none; text-size-adjust: none; }
+        html, body, h1, h2, h3, h4, h5, h6, div, ul, ol, li, dl, dt, dd, iframe, textarea, input, button, p, strong, b, i, a, span, del, pre, table, tr, th, td, form, fieldset, .pr, .pc { margin: 0; padding: 0; word-wrap: break-word; font-family: verdana,Microsoft YaHei,Tahoma,sans-serif; *font-family: Microsoft YaHei,verdana,Tahoma,sans-serif; }
+        body, ul, ol, li, dl, dd, p, h1, h2, h3, h4, h5, h6, form, fieldset, .pr, .pc, em, del { font-style: normal; font-size: 100%; }
+        ul, ol, dl { list-style: none; }
+        ._citys { width: 450px; display: inline-block; border: 2px solid #eee; padding: 5px; position: relative; background-color: white}
+        ._citys span { color: #09897d; height: 15px; width: 15px; line-height: 15px; text-align: center; border-radius: 3px; position: absolute; right: 10px; top: 10px; border: 1px solid #56b4f8; cursor: pointer; }
+        ._citys0 { width: 100%; height: 34px; display: inline-block; border-bottom: 2px solid #09897d; padding: 0; margin: 0; }
+        ._citys0 li { display: inline-block; line-height: 34px; font-size: 15px; color: #888; width: 80px; text-align: center; cursor: pointer; }
+        .citySel { background-color: #09897d; color: #fff !important; }
+        ._citys1 { width: 100%; display: inline-block; padding: 10px 0; }
+        ._citys1 a { width: 83px; height: 35px; display: inline-block; background-color: #f5f5f5; color: #666; margin-left: 6px; margin-top: 3px; line-height: 35px; text-align: center; cursor: pointer; font-size: 13px; overflow: hidden; }
+        ._citys1 a:hover { color: #fff; background-color: #56b4f8; }
+        .AreaS { background-color: #09897d !important; color: #fff !important; }
+        .chakangengduo{
+            width: 260px;
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+            padding-top: 0px;
+            padding-bottom: 5px;
+            border: 1px solid black;
+            margin-left: 5%;
+            margin-top: 10px;
+            margin-bottom: 80px;
+            /*clear: both;*/
+            float: left;
+        }
+        .chakantianjia{
+            width: 100%;
+            float: left;
+        }
+        .red::-webkit-input-placeholder{
+            color: red;
+        }
+        .backcolor{
+            background-color: #EFD9D9;
+        }
+        .fontccor{
+            color: #09897d;
+        }
+    </style>
+</head>
+<body>
+<header></header>
+<section>
+    <div class="stepall">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li id="licolor"></li>
+        </ul>
+        <div class="stepspot stepchild1">
+            <div class="steptxt">购物车</div>
+        </div>
+        <div class="stepspot stepchild2">
+            <div class="steptxt">填写订单</div>
+        </div>
+        <div class="stepspot stepchild3 stepdef">
+            <div class="steptxt stepdeffont">完成订单</div>
+        </div>
+        <div class="stephaff"></div>
+    </div>
+    <div class="personinfo" >
+        <div class="personinfotitil">收货人信息</div>
+        <div>
+            <div class="address">
+                <!--<div class="detailedaddress" >-->
+                    <!--<div class="detailedaddress_lianxirenxinxi"><span class="shoujianren">1</span><span class="shoujihao">1</span></div>-->
+                    <!--<div class="detailedaddress_dizhi">1</div>-->
+                    <!--<div class="detailedaddress_xiugaishanchu"><span class="morendizhi">设为默认</span><span class="xiugai">&#xe6b8;</span><span class="shanchu">&#xe624;</span></div>-->
+                <!--</div>-->
+            </div>
+        </div>
+        <div class="chakantianjia">
+            <div class="chakangengduo">+查看更多地址</div>
+            <div class="addadress">+添加地址</div>
+        </div>
+        <div class="addadress_appear">
+            <div class="addinfo">
+                <div><input type="text" placeholder="收货人" class="information infowidth_min"id="peoplename"/>
+                    <input type="text"placeholder="手机"class="information infowidth_min"id="inputleft"/></div>
+                <div>
+                    <input type="text" id="city" class="information infowidth_big"placeholder="省/市/区"/>
+                </div>
+                <div><input type="text"placeholder="详细地址"class="information infowidth_big"id="xiangxiadress"/></div>
+                <div class="buttongroup"><button id="sureadd"type="button">确定</button><button type="button"id="canceladd">取消</button></div>
+                <div class="changesureadd"><button id="changesureadd"type="button">确定</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="dispatchingtime">
+        <div id="dispatchingtime_title">配送时间</div>
+        <div id="dispatchingtime_content">18:00前支付预计24小时之内发货，18:00后支付预计48小时之内发货</div>
+    </div>
+    <form action="ordersure.html"class="goodsform">
+        <div class="goodslist">
+            <div class="goodslist_title">商品清单</div>
+            <div class="goodslist_info">
+                <table class="userorder">
+
+                </table>
+                <div class="coupon">优惠券 <span>（</span>0<span>）</span><span id="coupon_right">无可用</span></div>
+            </div>
+        </div>
+        <div class="submitOrder">
+            <div class="paymentmethod">支付方式：在线支付</div>
+            <div class="allmoney">总额：<span></span></div>
+            <a class="submitbutton"> <button>提交订单</button> </a>
+        </div>
+
+    </form>
+</section>
+<footer></footer>
+<script src="../js/jquery-1.11.3.js"></script>
+<script src="../js/less.js"></script>
+<script src="../js/ajax.js"></script>
+<script src="../js/Popt.js"></script>
+<script src="../js/cityJson.js"></script>
+<script src="../js/citySet.js"></script>
+<script type="text/javascript">
+    window.onload=function(){
+        console.log("111")
+        var tbs=$(".address")
+        tbs.html();
+        xianshi();
+        xuqiudizhi()
+    }
+    function xuqiudizhi(){
+        ajaxfn({
+            "method":"get",
+            "url":"/xuqiudizhi2.do",
+            "parm":'',
+            "backnum":function(httpRequest){
+                var a=httpRequest.responseText;
+                console.log(a)
+                var obj= JSON.parse(httpRequest.responseText);
+            }
+        })
+        ajaxfn({
+            "method":"get",
+            "url":"/xuqiudizhi.do",
+            "parm":'',
+            "backnum":function(httpRequest){
+                var a=httpRequest.responseText;
+                console.log(a)
+                var obj= JSON.parse(httpRequest.responseText);
+            }
+        })
+    }
+    $("#peoplename").focus(function(){
+        $("#peoplename").attr('placeholder','收货人').removeClass('shoujianpadding red backcolor')
+    });
+    $("#inputleft").focus(function(){
+        $("#inputleft").attr('placeholder','手机号').removeClass('shoujianpadding red backcolor')
+    });
+    $("#city").focus(function(){
+        $("#city").attr('placeholder','省/市/区').removeClass('shoujianpadding red backcolor')
+    });
+    $("#xiangxiadress").focus(function(){
+        $("#xiangxiadress").attr('placeholder','详细地址').removeClass('shoujianpadding red backcolor')
+    });
+    $(".addadress").click(function(){
+        $(".addadress").css("display","none")
+        $(".addadress_appear").animate({height:"300px"})
+    });
+    $(".chakangengduo").click(function(){
+        var a=$(".chakangengduo").text()
+        console.log(a)
+        if($(".chakangengduo").text()=='+查看更多地址'){
+            $(".address").css('overflow','visible')
+            $(".chakangengduo").text('-查看更多地址')
+        }else if($(".chakangengduo").text()=='-查看更多地址'){
+            $(".address").css('overflow','hidden')
+            $(".chakangengduo").text('+查看更多地址')
+        }
+
+
+    })
+    $("#canceladd").click(function(){
+        $(".addadress_appear").animate({height:"1px"});
+        $(".addadress").delay(200).show(0);
+    })
+    $("#city").click(function (e) {
+        SelCity(this,e);
+
+    });
+    $("#city").focus(function(){
+        $("#kongbai").css("display","block")
+    });
+    $(function(){
+        $("#sureadd").on('click',function(){
+            var str = $("#inputleft").val();
+            var ret = /^1([358][0-9]|4[579]|66|7[0135678]|9[89])[0-9]{8}$/;
+            console.log(ret.test(str))
+            if($("#peoplename").val()=='') {
+                $("#peoplename").attr('placeholder', '请输入收件人').addClass('shoujianpadding red backcolor')
+            }
+            if($("#inputleft").val()==''){
+                $("#inputleft").attr('placeholder','请输入手机号').addClass('shoujianpadding red backcolor')
+            }
+            if($("#city").val()==''){
+                $("#city").attr('placeholder','请选择城市').addClass('shoujianpadding red backcolor')
+            }
+            if($("#xiangxiadress").val()==''){
+                $("#xiangxiadress").attr('placeholder','请输入详细地址').addClass('shoujianpadding red backcolor')
+            }
+            if(ret.test(str)==false){
+                var h=$("#inputleft").val();
+                $("#inputleft").val('')
+                $("#inputleft").attr('placeholder','请输入正确的手机号').addClass('shoujianpadding red backcolor')
+            }else{
+                if($("#peoplename").val()!=''&&$("#inputleft").val()!=''&&$("#city").val()!=''&&$("#xiangxiadress").val()!=''){
+                    console.log("1111")
+                    var parm="peoplename="+$("#peoplename").val()+"&inputleft="+$("#inputleft").val()+"&city="+$("#city").val() +"&xiangxiadress="+$("#xiangxiadress").val();
+                    ajaxfn({
+                        "method":"get",
+                        "url":"/addadress.do",
+                        "parm":parm,
+                        "backnum":function(httpRequest){
+                            var a=httpRequest.responseText;
+                            var obj= JSON.parse(httpRequest.responseText);
+                            var tbs=$(".address")
+                            tbs.html();
+                            xianshi();
+                        }
+                    })
+                    $(".addadress_appear").animate({height:"1px"});
+                    $(".addadress").delay(200).show(0);
+                    $("#peoplename").attr('placeholder','收货人').removeClass('shoujianpadding red backcolor').val('');
+                    $("#inputleft").attr('placeholder','手机号').removeClass('shoujianpadding red backcolor').val('');
+                    $("#city").attr('placeholder','省/市/区').removeClass('shoujianpadding red backcolor').val('');
+                    $("#xiangxiadress").attr('placeholder','详细地址').removeClass('shoujianpadding red backcolor').val('');
+                }
+            }
+        })
+    });
+    function xianshi(){
+        ajaxfn({
+            "method":"get",
+            "url":"/xianshi.do",
+            "parm":'',
+            "backnum":function(httpRequest){
+                var a=httpRequest.responseText;
+                var obj= JSON.parse(httpRequest.responseText);
+                var tbs=$(".address")
+                tbs.empty();
+                for(var i=0;i<obj.length;i++){
+                    if(obj[i].add_isdefault==1){
+                        tbs.prepend("<div class='detailedaddress dizhikuang'uid="+obj[i].add_id+">" +
+                        "<div class='detailedaddress_lianxirenxinxi'>" +
+                        "<span class='shoujianren'>"+obj[i].res_name+"</span><span class='shoujihao'>"+obj[i].res_phone+"</span></div>" +
+                        "<div class='detailedaddress_dizhi'>"+obj[i].add_city+"-"+obj[i].add_address+"</div>" +
+                        "<div class='detailedaddress_xiugaishanchu'><span class='morendizhi fontccor shezhimoren'uid="+obj[i].add_id+">默认地址</span><span class='xiugai'uid="+obj[i].add_id+">&#xe6b8;</span><span class='shanchu' uid="+obj[i].add_id+">&#xe624;</span></div></div>")
+
+                    }else
+                    tbs.append("<div class='detailedaddress'uid="+obj[i].add_id+">" +
+                    "<div class='detailedaddress_lianxirenxinxi'>" +
+                    "<span class='shoujianren'>"+obj[i].res_name+"</span><span class='shoujihao'>"+obj[i].res_phone+"</span></div>" +
+                    "<div class='detailedaddress_dizhi'>"+obj[i].add_city+"-"+obj[i].add_address+"</div>" +
+                    "<div class='detailedaddress_xiugaishanchu'><span class='morendizhi shezhimoren'uid="+obj[i].add_id+">设为默认</span><span class='xiugai'uid="+obj[i].add_id+">&#xe6b8;</span><span class='shanchu' uid="+obj[i].add_id+">&#xe624;</span></div></div>")
+                }
+                //
+                $(".detailedaddress").click(function(){
+                    $(".detailedaddress").removeClass('dizhikuang')
+                    $(this).addClass('dizhikuang')
+//                    console.log($(this).hasClass('dizhikuang'))
+                    var uid=$(this).attr('uid')
+                    console.log(uid)
+//                    $(".submitbutton").click(function(){
+                        var parm='add_id='+uid
+                        ajaxfn({
+                            "method":"get",
+                            "url":"/gaibiandizhi2.do",
+                            "parm":'',
+                            "backnum":function(httpRequest){
+                                var a=httpRequest.responseText;
+                                console.log(a)
+                                var obj= JSON.parse(httpRequest.responseText);
+                            }
+                        })
+                        ajaxfn({
+                            "method":"get",
+                            "url":"/gaibiandizhi.do",
+                            "parm":parm,
+                            "backnum":function(httpRequest){
+                                var a=httpRequest.responseText;
+                                console.log(a)
+                                var obj= JSON.parse(httpRequest.responseText);
+                            }
+                        })
+//                    })
+                })
+                //
+                $(".shanchu").click(function(){
+                    var uid=$(this).attr('uid')
+                    var parm='add_id='+uid;
+                    console.log(uid)
+                    console.log(parm)
+                    ajaxfn({
+                        "method":"get",
+                        "url":"/addressdelet.do",
+                        "parm":parm,
+                        "backnum":function(httpRequest){
+                            var a=httpRequest.responseText;
+                            var obj= JSON.parse(httpRequest.responseText);
+//
+                            xianshi();
+                        }
+                    })
+                })
+                $(".xiugai").click(function(){
+                    var uid=$(this).attr('uid')
+                    var parm='add_id='+uid;
+                    ajaxfn({
+                        "method":"get",
+                        "url":"/addresschange.do",
+                        "parm":parm,
+                        "backnum":function(httpRequest){
+                            var a=httpRequest.responseText;
+                            var obj= JSON.parse(httpRequest.responseText);
+                            console.log(obj)
+                            $("#peoplename").val(obj[0].res_name)
+                            $("#inputleft").val(obj[0].res_phone)
+                            $("#city").val(obj[0].add_city)
+                            $("#xiangxiadress").val(obj[0].add_address)
+                        }
+                    })
+                    $(".changesureadd").css('display','block')
+                    $(".addadress").css("display","none")
+                    $(".addadress_appear").animate({height:"300px"})
+                    $(".changesureadd").click(function(){
+                        var par="peoplename="+$("#peoplename").val()+"&inputleft="+$("#inputleft").val()+"&city="+$("#city").val() +"&xiangxiadress="+$("#xiangxiadress").val()+"&add_id="+uid;
+                        console.log('add_id='+uid)
+                        console.log("peoplename="+$("#peoplename").val())
+                        ajaxfn({
+                            "method":"get",
+                            "url":"/addresschangesure.do",
+                            "parm":par,
+                            "backnum":function(httpRequest){
+                                var a=httpRequest.responseText;
+                                var obj= JSON.parse(httpRequest.responseText);
+                                console.log(obj)
+                                xianshi();
+                            }
+                        })
+                        $("#peoplename").attr('placeholder','收货人').removeClass('shoujianpadding red backcolor').val('');
+                        $("#inputleft").attr('placeholder','手机号').removeClass('shoujianpadding red backcolor').val('');
+                        $("#city").attr('placeholder','省/市/区').removeClass('shoujianpadding red backcolor').val('');
+                        $("#xiangxiadress").attr('placeholder','详细地址').removeClass('shoujianpadding red backcolor').val('');
+                        $(".changesureadd").css('display','none')
+                        $(".addadress").css("display","block")
+                        $(".addadress_appear").animate({height:"1px"})
+                    })
+                })
+
+                $(".morendizhi").click(function(){
+                    var a=$(this).text();
+                    if(a=='设为默认'){
+                        var uid=$(this).attr('uid')
+                        var parm='add_id='+uid;
+                        ajaxfn({
+                            "method":"get",
+                            "url":"/addressmoren2.do",
+                            "parm":'',
+                            "backnum":function(httpRequest){
+                                var a=httpRequest.responseText;
+                                var obj= JSON.parse(httpRequest.responseText);
+                                console.log(obj)
+                            }
+                        })
+                        ajaxfn({
+                            "method":"get",
+                            "url":"/addressmoren.do",
+                            "parm":parm,
+                            "backnum":function(httpRequest){
+                                var a=httpRequest.responseText;
+                                var obj= JSON.parse(httpRequest.responseText);
+                            }
+                        })
+                        $(".morendizhi").css('color','black')
+                        $(".morendizhi").text('设为默认')
+                        $(this).text('默认地址');
+                        $(this).css('color','#09897d')
+                    }
+                    $(this).text('默认地址')
+                });
+            }
+        })
+        ajaxfn({
+            "method": "get",
+            "url": "/xianshidingdan.do",
+            "parm": '',
+            "backnum": function (httpRequest) {
+                var a = httpRequest.responseText;
+                var obj = JSON.parse(httpRequest.responseText);
+                console.log(obj)
+                var tbs = $(".userorder")
+                tbs.html('');
+                for (var i = 0; i < obj.length; i++) {
+                    tbs.append("<tr><td> <img src='"+obj[i].order_img+"'/></td>" +
+                    "<td>"+obj[i].goods_name+"</td>"
+                    + "<td>"+obj[i].order_price+"</td>"
+                    + "<td>"+obj[i].order_num+"</td>"
+                    + "<td class='wuyong'>"+obj[i].order_numprice+"</td></tr>")
+//                    var ccc=obj[i].order_numprice
+//                    console.log($(".wuyong"))
+////
+                }
+                console.log(obj[0].order_zonge)
+                $(".allmoney span").text(obj[0].order_zonge).addClass('fontstyle')
+            }
+        })
+    }
+
+    $(".shezhimoren").click(function(){
+        $(".shezhimoren").text('默认地址')
+    })
+
+//    $("#city").blur(function(){
+//        $("#kongbai").css("display","none")
+//    })
+    $(".xiugai").on('click',function(){
+        $(".addadress").css("display","none")
+        $(".addadress_appear").animate({height:"300px"})
+    })
+</script>
+</body>
+</html>
