@@ -6,22 +6,54 @@
     <link rel="stylesheet" href="css/login.css"/>
 </head>
 <body>
-<%-include head.html %>
 <div id="loginBj">
-    <form >
+    <form>
         <p>登录账户</p>
-        <input id=userName type="text"  placeholder="账户名"/>
-        <input id=userPwd type="password"  placeholder="密码"/>
-        <button id="btnLogin" type="button">签到</button>
-        <p>
-            <a href="">忘记密码？</a>
-            <a href="">注册</a>
-        </p>
+        <input type="text" name="username"id="username"placeholder="账户名"/>
+        <input type="password" name="password"id="password"placeholder="密码"/>
+        <input type="button" id="loginbtn"value="登录" />
+        <p><a href="#">忘记密码？</a><a href="zhuce.html">注册</a></p>
     </form>
 </div>
-<!--onblur="checkPwd()"-->
-<script src="less.min.js"></script>
 <script src="js/jquery-1.11.3.js"></script>
-<script src="js/login.js"></script>
+<script src="js/less.js"></script>
+<script src="js/ajax.js"></script>
+<script type="text/javascript">
+    //        正则判断
+    $("#loginbtn").on("click",function(){
+        var cc=$("#username").val();          //输入手机号
+        console.log($("#username").val.length);
+        var bb=$("#password").val();            //密码输入值
+        console.log(bb);
+        var zz=/^[A-Za-z0-9]{6,20}$/;  //密码正则
+        var dd=/^[1][3,4,5,7,8][0-9]{9}$/; //手机号正则
+        var aa=dd.test(cc);                 //手机号正则对比验证
+        var ee=zz.test(bb);                //密码正则对比
+        if($("#username").val().toString().length==0){
+            alert('请输入手机号')
+        }
+        else  if(aa==false){
+            alert('请输入正确的手机号')
+        }
+        else if($("#password").val().toString().length==0){
+            alert('请输入密码')
+        }
+        else if(ee==false){
+            alert('请输入至少6位密码')
+        }
+        else{
+            var parm="username="+cc+"&password="+bb;
+            ajaxfn({
+                "method":"post",
+                "url":"/login.do",
+                "parm":parm,
+                "backnum":function(xhr){
+                    alert(xhr.responseText);
+                }
+            })
+        }
+    })
+
+</script>
 </body>
 </html>
