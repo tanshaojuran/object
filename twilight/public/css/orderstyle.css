@@ -1,0 +1,518 @@
+.float {
+  float: left;
+}
+.border {
+  width: 80%;
+  margin-left: 10%;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background-color: #efefef ;
+  font-family: "΢���ź�", "����";
+  font-size: 16px;
+}
+.stepall {
+  position: relative;
+  margin-bottom: 50px;
+  left: 5%;
+  height: 10px;
+  margin-top: 100px;
+  padding-left: 7%;
+  width: 80%;
+  margin-left: 10%;
+}
+.stepall li {
+  float: left;
+  background-color: #09897d ;
+  height: 2px;
+  width: 20%;
+  margin-top: 20px;
+  list-style: none;
+}
+.stepspot {
+  text-align: center;
+  border-radius: 12px;
+  background-color: #09897d;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+}
+.stepchild1 {
+  top: 15px;
+  left: 19.5%;
+}
+.stepchild2 {
+  top: 15px;
+  left: 41%;
+}
+.stepchild3 {
+  top: 15px;
+  left: 63%;
+}
+.steptxt {
+  position: absolute;
+  color: #09897d ;
+  width: 100px;
+  top: -40px;
+  left: -350%;
+}
+#licolor {
+  background-color: #adadad;
+  width: 13%;
+}
+.stepdef {
+  background-color: #adadad;
+}
+.stepdeffont {
+  color: #adadad ;
+}
+.stephaff {
+  background-color: #adadad ;
+  height: 2px;
+  width: 11%;
+  position: absolute;
+  left: 52%;
+  top: 20px;
+}
+.personinfo {
+  clear: both;
+  width: 80%;
+  position: relative;
+  margin-left: 10%;
+  background: white;
+}
+.orderinfo {
+  width: 260px;
+  text-align: center;
+  height: 30px;
+  line-height: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid black;
+  margin-left: 5%;
+  margin-top: -50px;
+  margin-bottom: 80px;
+}
+.orderinfo2 {
+  width: 260px;
+  text-align: center;
+  height: 30px;
+  line-height: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid black;
+  margin-left: 5%;
+  margin-top: -50px;
+  margin-bottom: 80px;
+  display: none;
+}
+.sureorder {
+  height: 210px;
+}
+.personinfotitil {
+  border-bottom: 1px solid #b8b8b8;
+  padding-left: 5%;
+  height: 48px;
+  line-height: 48px;
+}
+.addadress {
+  width: 260px;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  padding-top: 0px;
+  padding-bottom: 5px;
+  border: 1px solid black;
+  margin-left: 1%;
+  margin-top: 10px;
+  margin-bottom: 80px;
+  /*clear: both;*/
+  float: left;
+}
+.address {
+  height: 250px;
+  /*border: 1px solid black;*/
+  overflow: hidden;
+}
+.detailedaddress {
+  width: 285px;
+  height: 220px;
+  border: 1px dashed #09897d;
+  margin-left: 5%;
+  margin-top: 15px;
+  float: left;
+}
+.dizhikuang{
+  border: 1px solid #09897d;
+}
+#sureadd {
+  background-color: #09897d;
+  color: white;
+  width: 140px;
+  height: 40px;
+  border-radius: 6px;
+  margin-left: 5%;
+}
+#changesureadd{
+  background-color: #09897d;
+  color: white;
+  width: 140px;
+  height: 40px;
+  border-radius: 6px;
+  margin-left: 5%;
+}
+.changesureadd{
+  margin-top: -40px;
+  display: none;
+}
+#canceladd {
+  background-color: #414141;
+  color: white;
+  width: 140px;
+  border-radius: 6px;
+  margin-left: 20px;
+  height: 40px;
+}
+.buttongroup {
+  margin-top: 40px;
+}
+.textbored {
+  height: 40px;
+  border-style: none;
+}
+.goodslist {
+  background-color: white;
+}
+.goodslist .goodslist_title {
+  border-bottom: 1px solid #b8b8b8;
+  padding-left: 5%;
+  height: 45px;
+  line-height: 45px;
+}
+.dispatchingtime {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 15px;
+  position: relative;
+  background-color: white;
+}
+.payment {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 15px;
+  position: relative;
+  background-color: #f6f6f6;
+  height: 400px;
+}
+#payment_title {
+  height: 60px;
+  border-bottom: 1px solid #adadad;
+  line-height: 60px;
+  padding-left: 5%;
+}
+.submitOrder {
+  margin-top: 15px;
+  position: relative;
+  height: 230px;
+  background-color: white;
+}
+.shoujianpadding{
+  background-color:#fed9d9;
+  color: red;
+  text-align: right;
+}
+.information {
+  background-color: #efefef;
+  height: 40px;
+  border-style: none;
+}
+.infowidth_big {
+  margin-left: 5%;
+  width: 40%;
+  margin-top: 15px;
+}
+.infowidth_min {
+  margin-left: 5%;
+  width: 19%;
+}
+#dispatchingtime_title {
+  height: 48px;
+  border-bottom: 1px solid #b8b8b8;
+  line-height: 48px;
+  padding-left: 5%;
+}
+#dispatchingtime_content {
+  height: 58px;
+  line-height: 58px;
+  padding-left: 5%;
+}
+#payment_content {
+  height: 58px;
+  line-height: 58px;
+  padding-left: 5%;
+}
+.payment_kinds {
+  margin-left: 5%;
+  width: 90%;
+  box-shadow: 3px 3px 2px #d9d9d9;
+  background-color: white;
+  height: 70px;
+}
+.payment_kinds:hover {
+  box-shadow: 3px 3px 2px #09897d;
+  -webkit-transition: all 1s linear ;
+}
+.payment_kinds div {
+  float: left;
+  margin-left: 40px;
+  width: 120px;
+  height: 66px;
+  line-height: 66px;
+  text-align: center;
+}
+.payment_kinds div:hover {
+  color: #09897d;
+  cursor: pointer;
+}
+.xiahuaxian {
+  border-bottom: 4px solid #09897d;
+}
+.zhifubao {
+  margin-left: 5%;
+  margin-top: 10px;
+  position: absolute;
+  top: 200px;
+  float: left;
+  display: none;
+}
+.zhifubao div {
+  float: left;
+}
+.zhifubao .yinyin1 {
+  box-shadow: 3px 3px 2px #d9d9d9;
+}
+.zhifubao .yinyin1:hover {
+  box-shadow: 3px 3px 2px #09897d;
+  -webkit-transition: all 1s linear ;
+  cursor: pointer;
+}
+.zhifubao .yinyin1 img {
+  width: 200px;
+}
+.zhifubao .yinyin2 {
+  margin-left: 20px;
+}
+.goodsform {
+  margin-top: 15px;
+  width: 80%;
+  margin-left: 10%;
+}
+.goodsform table {
+  border-collapse: collapse;
+  width: 95%;
+}
+.goodsform table tbody tr {
+  border-bottom: 1px solid #adadad;
+  width: 500px;
+  height: 100px;
+}
+.goodsform table tbody tr td {
+  text-align: center;
+}
+.paymentmethod {
+  position: absolute;
+  margin-top: 20px;
+  left: 5%;
+}
+.allmoney {
+  position: absolute;
+  margin-left: 70%;
+  margin-top: 30px;
+}
+.submitbutton {
+  position: absolute;
+  left: 70%;
+  top: 90px;
+}
+.submitbutton button {
+  background-color: #09897d;
+  color: white;
+  height: 55px;
+  width: 310px;
+  border-radius: 6px;
+}
+.goodslist_info {
+  margin-left: 5%;
+}
+#inputleft {
+  margin-left: 1.7%;
+}
+.addadress_appear {
+  height: 1px;
+  width: 90%;
+  margin-top: -70px;
+  overflow: hidden;
+  clear: both;
+}
+.orderinfo_appear {
+  height: 1px;
+  margin-left: 5%;
+  width: 90%;
+  margin-top: 0px;
+  overflow: hidden;
+  border: 1px solid #efefef;
+}
+.qingdan{
+  margin-top: -23px;
+  margin-left: 5.6%;
+}
+.qingdan span{
+  float: left;
+}
+.coupon {
+  margin-top: 20px;
+  font-size: 14px;
+  height: 50px;
+}
+#coupon_right {
+  margin-left: 82%;
+}
+.sola {
+  padding-left: 5%;
+  height: 10px;
+  -webkit-border-top-right-radius: 5px;
+  background-color: #09897d;
+}
+@font-face {
+  font-family: 'oderfont';
+  src: url('../font/iconfont.eot');
+  src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), url('../font/iconfont.woff') format('woff'), url('../font/iconfont.ttf') format('truetype'), url('../font/iconfont.svg#iconfont') format('svg');
+}
+.ordersuccess {
+  font-family: "oderfont";
+  color: #09897d;
+  margin-left: 5%;
+  margin-top: 20px;
+  font-size: 36px;
+}
+.ordersuccess #sureyes {
+  font-weight: bold;
+  font-size: 45px;
+}
+.ordersuccess #suresuccess {
+  margin-left: 1%;
+}
+#overtime {
+  margin-left: 5%;
+  margin-top: 20px;
+  width: 90%;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #adadad;
+}
+.orderinfo_right1 {
+  left: 50%;
+  position: absolute;
+}
+.orderinfo_right2 {
+  left: 50%;
+  position: absolute;
+}
+.oderinfo_xxx{
+  position: relative;
+}
+.fontstyle{
+  color:#09897d;
+  font-size: 24px;
+}
+.orderinfo_div {
+  margin-top: 20px;
+  position: relative;
+}
+.submitpayment {
+  margin-top: 3px;
+  position: relative;
+  height: 230px;
+  background-color: white;
+  width: 80%;
+  margin-left: 10%;
+}
+.submitpayment_security {
+  position: absolute;
+  margin-top: 20px;
+  left: 5%;
+}
+.submitpayment_security #submitpayment_security_img {
+  position: absolute;
+  top: 10px;
+}
+.submitpayment_security #submitpayment_security_font {
+  position: absolute;
+  left: 28px;
+  top: 10px;
+  width: 70px;
+}
+.submitpayment_money {
+  position: absolute;
+  margin-left: 70%;
+  margin-top: 30px;
+}
+.submitpayment_button {
+  position: absolute;
+  left: 70%;
+  top: 90px;
+  background-color: #09897d;
+  color: white;
+  height: 55px;
+  width: 310px;
+  border-radius: 6px;
+}
+.orderinfo:hover {
+  cursor: pointer;
+}
+.orderinfo2:hover {
+  cursor: pointer;
+}
+#alreadypayment {
+  background-color: #09897d;
+  color: white;
+  width: 150px;
+  height: 50px;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  border-radius: 6px;
+}
+#motaikuang_button {
+  border-top: 1px solid #EFEFEF;
+  background-color: white;
+}
+#myModal {
+  margin-top: 8%;
+}
+#guanbi {
+  font-family: oderfont ;
+  margin-left: 75%;
+}
+#guanbi:hover {
+  cursor: pointer;
+}
+#motaikuang_erweima {
+  height: 300px;
+  background-color: white;
+}
+#motaikuang_erweima img {
+  width: 250px;
+  height: 250px;
+  margin-top: 2%;
+}
+.detailedaddress_xiugaishanchu span {
+  font-family: oderfont;
+}
+.xiugai {
+  margin-left: 80%;
+}
+.shanchu {
+  margin-left: 5%;
+}

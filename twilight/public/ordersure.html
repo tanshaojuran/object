@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<link rel="stylesheet/less" href="./../less/style.less"/>-->
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/orderstyle.css"/>
+    <style>
+        .motaikuang{
+            width: 100%;
+            height: 100%;
+            border: 1px solid red;
+            position: fixed;
+            top: 0px;
+            text-align: center;
+            background: rgba(0,0,0,.7);
+            display:none;
+        }
+        #zhifukuang{
+            width: 25%;
+            height: 45%;
+            background-color: white;
+            margin-left: 38%;
+            margin-top: 10%;
+            opacity: 0;
+        }
+        #motaikuang_title{
+            border-bottom: 1px solid #EFEFEF;
+            height: 50px;
+            text-align: left;
+            padding-left: 2%;
+            line-height: 50px;
+        }
+        .time-item{
+            position: absolute;
+            top: 40px;
+            left: 75%;
+        }
+        .time-item strong {
+            background:#09897d;
+            color:#fff;
+            line-height:49px;
+            font-size:36px;
+            font-family:Arial;
+            padding:0 10px;
+            margin-right:10px;
+            border-radius:5px;
+            box-shadow:1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .item-title .unit {
+            background:#09897d;
+            line-height:49px;
+            font-size:24px;
+            padding:0 10px;
+            float:left
+        }
+    </style>
+</head>
+<body>
+<header></header>
+<section>
+    <div class="stepall">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li id="licolor"></li>
+        </ul>
+        <div class="stepspot stepchild1">
+            <div class="steptxt">购物车</div>
+        </div>
+        <div class="stepspot stepchild2">
+            <div class="steptxt">填写订单</div>
+        </div>
+        <div class="stepspot stepchild3 stepdef">
+            <div class="steptxt stepdeffont">完成订单</div>
+        </div>
+        <div class="stephaff"></div>
+    </div>
+    <div class="personinfo" >
+        <div class="sola"></div>
+        <div class="sureorder">
+            <div class="ordersuccess" >
+                <span id="sureyes">&#xe655;</span><span id="suresuccess">订单提交成功</span>
+                <span id="timechajian"></span>
+            </div>
+            <div id="overtime">支付成功后，我们将尽快为您发货。请在 1 个小时内完成支付，超时订单将会取消。</div>
+        </div>
+        <div class="orderinfo">+订单信息</div>
+        <div class="orderinfo2">-订单信息</div>
+        <div class="orderxiangqing">
+            <div class="orderinfo_appear">
+                <!--<div ><span>订单编号： 10180401745920001</span><span class="orderinfo_right1">联系电话： 10180401745920001</span></div>-->
+                <!--<div class="orderinfo_div"><span>收货信息： 四川省 成都市 武侯区 石羊场街道 保利·心语保利心语观园国际</span><span class="orderinfo_right2">联系人： 世界</span></div>-->
+                <!--<div class="orderinfo_div">商品清单： <span>OnePlus 5T 全能套装 × 1</span></div>-->
+            </div>
+        </div>
+        <div class="time-item">
+
+            <strong id="hour_show">0时</strong>
+            <strong id="minute_show">0分</strong>
+            <strong id="second_show">0秒</strong>
+        </div>
+    </div>
+    <div class="payment">
+        <div id="payment_title">支付方式</div>
+        <div id="payment_content">手机等大额支付推荐使用支付宝快捷支付</div>
+        <div class="payment_kinds">
+            <div id="zhifupingtai">支付平台</div>
+            <div id="wangyin">网银</div>
+            <div id="xinyongka">信用卡</div>
+        </div>
+        <div class="zhifubao"id="zfpt">
+            <div class="yinyin1"contenteditable="true"id="zhifubaozhifu"><img src="../image/zffs_zfb%20(1).png" /></div>
+            <div class="yinyin1 yinyin2"contenteditable="true"><img src="../image/zffs_wx%20(1).png" /></div>
+        </div>
+        <div class="zhifubao"id="wy">
+            <div class="yinyin1"contenteditable="true"><img src="../image/zffs_gsyh%20(1).png" /></div>
+            <div class="yinyin1 yinyin2"contenteditable="true"><img src="../image/zffs_jsyh%20(1).png" /></div>
+            <div class="yinyin1 yinyin2"contenteditable="true"><img src="../image/zffs_nyyh%20(1).png" /></div>
+        </div>
+        <div class="zhifubao"id="xyk">
+            <div class="yinyin1"contenteditable="true"><img src="../image/zffs_zgyh%20(1).png" /></div>
+            <div class="yinyin1 yinyin2"contenteditable="true"><img src="../image/zffs_zsyh%20(1).png" /></div>
+        </div>
+    </div>
+        <div class="submitpayment">
+            <div class="submitpayment_security"><span id="submitpayment_security_img"><img src="./../image/(NKG)XQ~_$_9KKHD%25TUY4HA.png" /></span><span id="submitpayment_security_font">安全支付</span></div>
+            <div class="submitpayment_money">应付金额：<span></span></div>
+                <button class="submitpayment_button" >支付</button>
+        </div>
+</section>
+<div class="motaikuang">
+    <div id="zhifukuang">
+        <div id="motaikuang_title"><span>请扫码支付</span><span id="guanbi">&#xe624;</span></div>
+        <div id="motaikuang_erweima"><img src="../image/UZA0QLEB(TWZ%60WM6JOBL%25%7DP.jpg"/></div>
+        <div id="motaikuang_button"><input type="button"value="我已支付"id="alreadypayment"/></div>
+    </div>
+</div>
+
+<footer></footer>
+<script src="./../js/jquery-1.11.3.js"></script>
+<script src="../js/ajax.js"></script>
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="./../js/less.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#zhifupingtai").addClass("xiahuaxian")
+        $("#zfpt").css("display","block");
+        $("#zhifubaozhifu").css("border","1px,soild,#09897d")
+        orderxiangqing();
+    });
+    function orderxiangqing(){
+        ajaxfn({
+            "method": "get",
+            "url": "/orderxiangqing.do",
+            "parm": '',
+            "backnum": function (httpRequest) {
+                var a = httpRequest.responseText;
+                var obj = JSON.parse(httpRequest.responseText);
+                var tbs = $(".orderinfo_appear");
+                var yingfu=$(".submitpayment_money")
+                yingfu.append("<span class='fontstyle'>"+obj[0].order_zonge+"</span>")
+                console.log(obj)
+                tbs.empty();
+                tbs.append(
+                "<div class='oderinfo_xxx'><span id='dingdan'>订单编号： </span><span class='orderinfo_right1'>联系电话："+obj[0].res_phone+"</span></div>" +
+                "<div class='orderinfo_div'><span>收货地址："+obj[0].add_city+""+obj[0].add_address+"</span><span class='orderinfo_right2'>联系人："+obj[0].res_name+"</span>" +
+                "<div class='orderinfo_div'>商品清单：</div>")
+                var qianapend=$("#dingdan")
+                for (var i = 0; i < obj.length; i++) {
+                    qianapend.append("<span>"+obj[0].user_id+""+obj[i].order_id+"</span>")
+                    tbs.append("<div class='qingdan'><span>"+obj[i].goods_name+"</span><span> x</span><span>"+obj[i].order_num+"</span><span>&ensp;&ensp;</span></div>")
+                }
+            }
+        })
+    }
+    $(".orderinfo").click(function(){
+        $(".orderinfo_appear").animate({height:"130px"})
+        $(".orderinfo2").css("display","block")
+        $(".orderinfo").css("display","none")
+    });
+    $(".orderinfo2").click(function(){
+        console.log(111);
+        $(".orderinfo_appear").animate({height:"1px"})
+        $(".orderinfo2").css("display","none")
+        $(".orderinfo").css("display","block")
+    });
+    $("#sureadd").click(function(){
+        $(".orderinfo_appear").animate({height:"1px"});
+        $(".orderinfo").delay(500).show(0);
+    });
+    $("#canceladd").click(function(){
+        $(".orderinfo_appear").animate({height:"1px"});
+        $(".orderinfo").delay(200).show(0);
+
+    })
+    $("#zhifupingtai").click(function(){
+        $("#zhifupingtai").addClass("xiahuaxian")
+        $("#wangyin").removeClass("xiahuaxian")
+        $("#xinyongka").removeClass("xiahuaxian")
+        $("#zfpt").css("display","block");
+        $("#wy").css("display","none");
+        $("#xyk").css("display","none")
+    });
+    $("#wangyin").click(function(){
+        $("#wangyin").addClass("xiahuaxian")
+        $("#zhifupingtai").removeClass("xiahuaxian")
+        $("#xinyongka").removeClass("xiahuaxian")
+        $("#zfpt").css("display","none");
+        $("#wy").css("display","block");
+        $("#xyk").css("display","none")
+    })
+    $("#xinyongka").click(function(){
+        $("#xinyongka").addClass("xiahuaxian")
+        $("#zhifupingtai").removeClass("xiahuaxian")
+        $("#wangyin").removeClass("xiahuaxian")
+        $("#zfpt").css("display","none");
+        $("#wy").css("display","none");
+        $("#xyk").css("display","block")
+    });
+    $(".yinyin1").focus(function(){
+        console.log("222")
+        $(this).css("border","1px,soild,#09897d")
+    })
+    $(".submitpayment_button").click(function(){
+        $(".motaikuang").css("display","block")
+//        $("#zhifukuang").css("margin-top","10%")
+        $("#zhifukuang").animate({opacity:"1"})
+
+    });
+    $("#guanbi").click(function(){
+        $("#zhifukuang").animate({opacity:"0"})
+        $(".motaikuang").delay(100).css("display","none")
+    })
+    $(".motaikuang").click(function(){
+        $(".motaikuang").delay(100).css("display","none")
+    })
+    $("#zhifukuang").click(function(){
+        return false;
+    })
+    var intDiff = parseInt(3600);//倒计时总秒数量
+    function timer(intDiff){
+        window.setInterval(function(){
+            var day=0,
+                    hour=0,
+                    minute=0,
+                    second=0;//时间默认值
+            if(intDiff > 0){
+                day = Math.floor(intDiff / (60 * 60 * 24));
+                hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
+                minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
+                second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+            }
+            if (minute <= 9) minute = '0' + minute;
+            if (second <= 9) second = '0' + second;
+            $('#day_show').html(day+"天");
+            $('#hour_show').html('<s id="h"></s>'+hour+'时');
+            $('#minute_show').html('<s></s>'+minute+'分');
+            $('#second_show').html('<s></s>'+second+'秒');
+            intDiff--;
+        }, 1000);
+    }
+    $(function(){
+        timer(intDiff);
+    });
+//    $('#identifier').modal(options)
+</script>
+</body>
+</html>
