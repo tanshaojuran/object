@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<link rel="stylesheet" href="../css/shoppingcar.css"/>-->
+    <link rel="stylesheet/less" href="less/shoppingcar.less"/>
+    <style>
+        .stepall{
+            position: relative;
+            margin-left: 15%;
+            width: 80%;
+            margin-bottom: 50px;
+            height: 10px;
+            margin-top: 100px;
+        }
+        .stepall li{
+            float: left;
+            background-color:#09897d ;
+            height: 2px;
+            width: 20%;
+            margin-top: 20px;
+            list-style: none;
+        }
+        .stepspot{
+            text-align: center;
+            border-radius: 12px;
+            background-color: #09897d;
+            position: absolute;
+            width: 12px;
+            height: 12px;
+        }
+        .stepchild1{
+            top: 15px;
+            left: 19.5%;
+        }
+        .stepchild2{
+            top: 15px;
+            left: 40%;
+        }
+        .stepchild3{
+            top: 15px;
+            left: 60%;
+        }
+        .steptxt{
+            position: absolute;
+            color:#09897d ;
+            width: 100px;
+            top: -40px;
+            left: -350%;
+        }
+        #licolor2{
+            background-color: #adadad;
+        }
+        #licolor3{
+            background-color: #adadad;
+        }
+        #licolor4{
+            background-color: #adadad;
+        }
+        .stepdef{
+            background-color: #adadad;
+        }
+        .stepdeffont{
+            color:#adadad ;
+        }
+        .stephaff{
+            background-color:#09897d;
+            height: 2px;
+            width: 12%;
+            position: absolute;
+            left: 20%;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+<!--流程条-->
+<div class="stepall">
+    <ul>
+        <li id="licolor1"></li>
+        <li id="licolor2"></li>
+        <li id="licolor3"></li>
+        <li id="licolor4"></li>
+    </ul>
+    <div class="stepspot stepchild1">
+        <div class="steptxt">购物车</div>
+    </div>
+    <div class="stepspot stepchild2 stepdef">
+        <div class="steptxt stepdeffont">填写订单</div>
+    </div>
+    <div class="stepspot stepchild3 stepdef">
+        <div class="steptxt stepdeffont">完成订单</div>
+    </div>
+    <div class="stephaff"></div>
+</div>
+    <form action=""method="get">
+        <table>
+<!-- 表头-->
+            <thead>
+                <tr>
+                    <td class="td"></td>
+                    <td class="td1">商品</td>
+                    <td class="td2"></td>
+                    <td class="td3">价格</td>
+                    <td class="td4">数量</td>
+                    <td class="td5">小计</td>
+                    <td class="td6">操作</td>
+                </tr>
+            </thead>
+ <!-- 购物车商品详情-->
+            <tbody id="mycartable"></tbody>
+        </table>
+<!-- 结算提交到订单-->
+        <div class="car_submit">
+            <!--<div class="car_choose"> <span class="good_cho">一键选择</span></div>-->
+            <div class="car_choose">已选择 <span class="good_total">0</span>件商品</div>
+            <div class="car_total">
+                <div class="car_totaltop">
+                    <p>购物车商品小计<span class="car_count good_count">0</span></p>
+                    <p>运费<span class="car_count">0</span></p>
+                </div>
+                <div>
+                    <p class="price">总价<span class="car_count price_count">0</span></p>
+                </div>
+                <div class="car_shop">
+                    <button type=submit class="car_goon">继续购物</button>
+                    <button class="car_sum">结算</button>
+                </div>
+            </div>
+        </div>
+<!-- 服务保障-->
+        <div class="car_promise">
+            <div class="car_tb">
+                <div class="car_service">
+                    <img src="images/gwc_icon_01.png" alt=""/>
+                    <p>7天无理由退货</p>
+                </div>
+                <div class="car_service">
+                    <img src="images/gwc_icon_02.png" alt=""/>
+                    <p>15天退货保障</p>
+                </div>
+                <div class="car_service">
+                    <img src="images/gwc_icon_03.png" alt=""/>
+                    <p>30换货保障</p>
+                </div>
+                <div class="car_service">
+                    <img src="images/gwc_icon_04.png" alt=""/>
+                    <p>顺丰包邮</p>
+                </div>
+            </div>
+        </div>
+    </form>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/less.js"></script>
+<script src="js/ajax.js"></script>
+<script>
+var goodzs=0;         //总数
+var totaljg=0;        //总价
+    shopping_car();
+
+//    显示购物车数据
+
+    function shopping_car(){
+        ajaxfn({
+            "method":'get',
+            "url":"/carlib.do",
+            "parm":'',
+            "backnum":function(xmlhttp){
+                var obj=JSON.parse(xmlhttp.responseText);
+//                console.log(obj);
+                var userlb=document.getElementById('mycartable');
+                userlb.innerHTML='';
+                for(var i= 0;i<obj.length;i++){
+                    userlb.innerHTML+="<tr>" +
+                    "<td><input class='checkbox' type='checkbox'/></td>" +
+                    "<td>"+obj[i].car_id+"</td>" +
+                    "<td><img src='"+obj[i].car_img+"'></td>" +
+                    "<td>"+obj[i].car_price+"</td>" +
+                    "<td><div class='car_numjs'><span class='car_numj'uid="+obj[i].car_id+">-</span><span class='car_num'uid="+obj[i].car_id+">"+obj[i].car_num+"</span><span class='car_numn'uid="+obj[i].car_id+">+</span></div></td>" +
+                    "<td>"+obj[i].car_price*obj[i].car_num+"</td>" +
+                    "<td><a class='delbtn'uid="+obj[i].car_id+">&#xe61a;</a></td>"+
+                    "</tr>"
+                }
+
+
+//    选择商品
+                $('.checkbox').click(function(){
+                    var c=$('.good_total').text();
+                    var d=$(this).parents('tr').children('td:nth-of-type(5)').find('.car_num').text();
+                    var jia=$(this).parents('tr').children('td:nth-of-type(6)').text();
+                    if($(this).is(':checked')==true){
+                        c++;
+                        goodzs=goodzs+parseInt(d);
+                        totaljg=totaljg+parseFloat(jia);
+                        $('.good_total').text(c);
+                        $('.good_count').text(goodzs);
+                        $('.price_count').text(totaljg);
+                    }else{
+                        var c=$('.good_total').text();
+                        c--;
+                        goodzs=goodzs-parseInt(d);
+                        $('.good_total').text(c);
+                        $('.good_count').text(goodzs);
+                    }
+                })
+
+//                购物车数据减
+
+                function jian (obj,b) {
+                    var a= parseInt($(obj).next().text());
+                    if(a<=1){
+                        a=1;
+                    }else{
+                        a--;
+                    }
+                    $(obj).next().text(a);
+                    shopping_carnum(a,b)
+                }
+
+                $('#mycartable').on('click','.car_numj',function(){
+                    var b=$(this).attr('uid');
+                    jian(this,b);
+                });
+
+                /*购物车数据加*/
+
+                    function jia (obj,b) {
+                        var a= $(obj).prev().text();
+                        a++;
+                        $(obj).next().text(a);
+//                        console.log(b);
+                        shopping_carnum(a,b)
+                    }
+
+                    $('#mycartable').on('click','.car_numn',function(){
+                        var b=$(this).attr('uid');
+                        jia(this,b);
+                    });
+
+//                加减法数据修改方法
+
+                function shopping_carnum(a,b){
+                    var parm="carnum="+a+"&carid="+b;
+                    console.log(b);
+                    ajaxfn({
+                        "method":'get',
+                        "url":"/carnum.do",
+                        "parm":parm,
+                        "backnum":function(xmlhttp){
+                            shopping_car()
+                        }
+                    })
+                }
+            }
+        });
+    }
+
+    /*购物车数据删除*/
+
+    $('#mycartable').on('click','.delbtn',function(){
+        var myid=$(this).attr('uid');
+        console.log(myid);
+        var parm="id="+myid;
+        ajaxfn({
+            "method":'get',
+            "url":"/delcar.do",
+            "parm":parm,
+            "backnum":function(xmlhttp){
+                if(xmlhttp.responseText=='ok'){
+                    alert('删除成功');
+                    shopping_car()
+                }
+                else{
+                    alert('删除失败');
+                }
+            }
+        })
+    })
+
+
+
+</script>
+</body>
+</html>
