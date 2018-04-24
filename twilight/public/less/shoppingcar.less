@@ -1,0 +1,174 @@
+@color:#09897d;        //点睛色；
+@bg:#ebebeb;             //背景色；
+@family:"微软雅黑";       //字体
+@font-big:32px;          //大号字
+@font-title:24px;        //标题字
+@font-small-title:16px;  //小标题字字
+@font-txt:14px;          //文本字号
+@font-num:12px;          //参数
+@button-width:110px;     //按钮宽
+@button-height:30px;     //按钮高
+
+
+*{
+  font-family: @family;
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 613943 */
+  src: url('//at.alicdn.com/t/font_613943_dfh6jkn572pgb9.eot');
+  src: url('//at.alicdn.com/t/font_613943_dfh6jkn572pgb9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_613943_dfh6jkn572pgb9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_613943_dfh6jkn572pgb9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_613943_dfh6jkn572pgb9.svg#iconfont') format('svg');
+}
+body{
+  background-color: @bg;
+}
+form{
+  width: 88%;
+  margin:0 auto;
+  background-color: white;
+  table{
+    width: 100%;
+    margin:0 auto;
+    border-collapse:collapse ;
+    thead{
+      width: 100%;
+      padding-left: 20px;
+      tr{
+        border: 1px solid red;
+        td{
+          height: 60px;
+          color: white;
+          text-align: center;
+          background-color: #34373e;
+
+        }
+        .td{
+          width: 10%;
+        }
+        .td1{
+          width: 12%;
+        }
+        .td2{
+          width: 20%;
+        }
+        .td3{
+          width: 21%;
+        }
+        .td4{
+          width: 10%;
+        }
+        .td5{
+          width: 16%;
+        }
+        .td6{
+          width: 8%;
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          height: 135px;
+          text-align: center;
+          .delbtn{
+            font-family: iconfont;
+          }
+          img{
+            width: 50px;
+            border: 1px solid #a3a3a3;
+          }
+          .car_numjs{
+            width: 105px;
+            height: 24px;
+            line-height: 24px;
+            border: 1px solid #a3a3a3;
+           span{
+             cursor: pointer;
+              display:block;
+              float:left;
+              width: 33px;
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
+
+.car_submit,.car_promise{
+  width: 100%;
+  height: 200px;
+}
+.car_submit{
+  .car_choose,.car_total{
+    float: left;
+    font-size: 14px;
+  }
+  .car_choose{
+    margin-top: 25px;
+    margin-left: 25px;
+    width:60%
+  }
+  .car_total{
+    margin-top: 25px;
+    width:36%;
+    .car_totaltop{
+      height: 60px;
+      line-height: 25px;
+      font-size:14px ;
+      border-bottom: 1px solid #efefef;
+      .car_count{
+      float: right;
+    }
+    }
+
+    .price{
+     font-size:16px;
+      margin-top: 10px;
+      line-height: 25px;
+      font-weight: bold;
+      .car_count{
+        float: right;
+      }
+    }
+    .car_shop{
+      .car_goon,.car_sum{
+        margin-top:10px ;
+        width:200px;
+        height:50px;
+        font-size: 16px;
+        border: 1px solid grey;
+        margin-right: -1px;
+        margin-bottom: -1px;
+        border-radius: 6px;
+      }
+      .car_goon{
+        background-color: white;
+      }
+      .car_sum{
+        background-color: #09897d;
+        color: white;
+      }
+    }
+
+  }
+}
+.car_promise{
+  background-color: #f9f9f9;
+  margin:0 auto;
+  .car_tb{
+    padding-top: 45px;
+    width: 84%;
+    margin: 0 auto;
+    .car_service{
+     text-align: center;
+      width: 25%;
+      float: left;
+    }
+  }
+}
