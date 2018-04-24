@@ -5,7 +5,7 @@ const  myexpress=require('express');//引用express框架
 const myroutes=myexpress.Router();//使用express的Route类来进行路由的创建
 const usercontrol=require('./../control/control.js');//引用usercontrol.js文件
 const ProductListControl=require('./../control/ProductListControl.js');//引用ProductListControl.js文件，产品列表页
-const IndexControl = require('./../control/indexControl.js')//引用indexControl文件
+const IndexControl = require('./../control/indexControl.js');//引用indexControl文件
 
 myroutes.post('/login.do',usercontrol.userlogin);//登录
 
@@ -26,6 +26,7 @@ myroutes.get('/carlib.do',usercontrol.carlib);
 myroutes.get('/carnum.do',usercontrol.carnum);
 myroutes.get('/delcar.do',usercontrol.delcar);
 /*购物车结束*/
+
 module .exports=myroutes;
 
 
