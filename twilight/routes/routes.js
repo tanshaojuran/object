@@ -20,6 +20,12 @@ myroutes.post("/ProListShangPin.do",ProductListControl.ProListShangPin);
 //index首页的路由发送  start
 myroutes.get('/index.html',IndexControl.indexPage);
 //index首页的路由发送  end
+
+/*购物车模块*/
+myroutes.get('/carlib.do',usercontrol.carlib);
+myroutes.get('/carnum.do',usercontrol.carnum);
+myroutes.get('/delcar.do',usercontrol.delcar);
+/*购物车结束*/
 module .exports=myroutes;
 
 
