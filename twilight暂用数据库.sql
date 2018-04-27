@@ -1,4 +1,4 @@
-CREATE DATABASE twilight;
+﻿CREATE DATABASE twilight;
 USE twilight;
 #drop database twilight;
 
@@ -241,6 +241,8 @@ user_id	INT(4),                                              /*用户id*/
 FOREIGN KEY(user_id) REFERENCES user_list(user_id),  
 like_zt	CHAR(20) DEFAULT'1' NOT NULL,                        /*收藏产品状态 默认为0添加变为1*/
 like_date DATE NOT NULL                                      /*添加收藏时间*/
+good_name NVARCHAR(50)
+good_type NVARCHAR(50)
 );
 
 /*7、订单列表*/
