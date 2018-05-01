@@ -45,7 +45,7 @@ res_name        NVARCHAR(20) NOT NULL,               /*收件人姓名*/
 res_phone       VARCHAR(11) NOT NULL,                /*收件人电话*/              
 add_city        NVARCHAR(20) NOT NULL,               /*省市区*/
 add_address	    NVARCHAR(100) NOT NULL,              /*详细地址*/
-add_isdefault   VARCHAR(10) DEFAULT 0,	                 /*是否默认*/
+add_isdefault   VARCHAR(12) DEFAULT 0,	                 /*是否默认*/
 add_isused	    INT(5) DEFAULT 0 NOT NULL,    
 add_isaddress       INT(2) DEFAULT 0  NOT NULL,       /*是否启用*/
 user_id	        INT NOT NULL,                                 /*用户ID*/
